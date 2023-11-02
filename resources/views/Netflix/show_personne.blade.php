@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', "Zoom sur le film")
+@section('title', "Zoom sur la personne")
 
 @section('contenu')
 
