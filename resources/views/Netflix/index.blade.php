@@ -5,10 +5,7 @@
 @section('contenu')
 
 <div class="wrapper">
-  <section >
-
-  </section>
-
+<!-- Add a carousel for the look -->
   <section class="main-container" >
     <div class="location" id="home">
       <h1 id="home">Popular on Netflix</h1>
