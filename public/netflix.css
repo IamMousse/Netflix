@@ -9,6 +9,11 @@
     display: none;
 }
 
+.black {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
 html, body {
     width: 100vw;
     min-height: 100vh;
@@ -158,6 +163,9 @@ header {
     color: var(--dark);
 }
 
+.bg{
+    color: var(--primary);
+}
 
 /* FOOTER */
 footer {
