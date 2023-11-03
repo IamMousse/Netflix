@@ -5,6 +5,10 @@
 @section('contenu')
 
 <div class="wrapper">
+  <section >
+
+  </section>
+
   <section class="main-container" >
     <div class="location" id="home">
       <h1 id="home">Popular on Netflix</h1>
