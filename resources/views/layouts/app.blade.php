@@ -14,11 +14,11 @@
     <!-- HEADER -->
     <header>
       <div class="netflixLogo">
-        <a id="logo" href="#home"><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/logo.PNG?raw=true" alt="Logo Image"></a>
+        <a id="logo" href="/"><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/logo.PNG?raw=true" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
-        <a href="#home">Home</a>
-        <a href="#tvShows">TV Shows</a>
+        <a href="/">Home</a>
+        <a href="/personnes">Personnes</a>
         <a href="#movies">Movies</a>
         <a href="#originals">Originals</a>
         <a href="#">Recently Added</a>
