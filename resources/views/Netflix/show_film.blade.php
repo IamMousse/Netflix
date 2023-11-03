@@ -21,8 +21,9 @@
                 <h5>RottenTomato: {{$film->rating}}</h5>
                 <br>
                 <div>
-                    {{$film->trailer}}
+                    <a href="{{$film->trailer}}">Trailer</a>
                 </div>
+                <br>
                 <div>
                     <a href="{{route('personne.show', [$film->realisateur])}}">
                         <img src="{{$film->realisateur->photo}}" alt="" width="250px">
