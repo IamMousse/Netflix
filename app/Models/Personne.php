@@ -9,6 +9,12 @@ class Personne extends Model
 {
     protected $table = 'personnes';
     use HasFactory;
+    protected $fillable = ['nom', 'photos'];
+
+    public function films()
+    {
+        return $this->belongsToMany('Film::class');
+    }
 
     public function filmsRealises()
     {

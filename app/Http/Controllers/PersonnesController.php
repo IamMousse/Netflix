@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 use App\Models\Personne;
 use App\Models\Film;
@@ -21,18 +22,32 @@ class PersonnesController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @return IlluminateViewView
      */
     public function create()
     {
-        //
+        return View('personnes.create');
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
-        //
+        try
+        {
+            $personne = new Personne($request->all());
+            $personne->save();
+        }
+        catch (Throwable $e)
+        {
+            Log::debug($e);
+        }
+        return redirect()->route('personnes.index');
     }
 
     /**

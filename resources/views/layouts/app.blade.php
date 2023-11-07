@@ -19,7 +19,7 @@
       <nav class="main-nav">                
         <a href="/">Home</a>
         <a href="/personnes">Personnes</a>
-        <a href="#movies">Movies</a>
+        <a href="">Ajouter</a>
         <a href="#originals">Originals</a>
         <a href="#">Recently Added</a>
         <a target="_blank" href="https://codepen.io/cb2307/full/NzaOrm">Portfolio</a>        
