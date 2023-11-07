@@ -17,7 +17,8 @@ class PersonnesController extends Controller
     {
         $personnes = Personne::all();
         $films = Film::all();
-        return View('Netflix.personne', compact('personnes', 'films')); 
+        $fillable = Personne::all();
+        return View('Netflix.personne', compact('personnes', 'films', 'fillable')); 
     }
 
     /**
@@ -26,7 +27,7 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        return View('personnes.create');
+        return View('Netflix.create_personne');
     }
 
     /**
@@ -34,8 +35,6 @@ class PersonnesController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-
-
     public function store(Request $request)
     {
         try
@@ -43,7 +42,7 @@ class PersonnesController extends Controller
             $personne = new Personne($request->all());
             $personne->save();
         }
-        catch (Throwable $e)
+        catch (\Throwable $e)
         {
             Log::debug($e);
         }

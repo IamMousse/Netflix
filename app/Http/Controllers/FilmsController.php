@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+
 use App\Models\Film;
 
 class FilmsController extends Controller
@@ -18,7 +20,8 @@ class FilmsController extends Controller
         $actions = Film::where('genre', '=', 'Action')->get();
         $animes = Film::where('genre', '=', 'Anime')->get();
         $comedies = Film::where('genre', '=', 'Comedie')->get();
-        return View('Netflix.index', compact('films','documentaires', 'horreurs', 'actions', 'animes', 'comedies')); 
+        $fillable = Film::all();
+        return View('Netflix.index', compact('films','documentaires', 'horreurs', 'actions', 'animes', 'comedies', 'fillable')); 
     }
 
     /**
@@ -26,15 +29,26 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        //
+        return View('Netflix.create_film');
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        try
+        {
+            $film = new Film($request->all());
+            $film->save();
+        }
+        catch (\Throwable $e)
+        {
+            Log::debug($e);
+        }
+        return redirect()->route('films.index');
     }
 
     /**

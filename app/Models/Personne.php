@@ -9,7 +9,7 @@ class Personne extends Model
 {
     protected $table = 'personnes';
     use HasFactory;
-    protected $fillable = ['nom', 'photos'];
+    protected $fillable = ['nom', 'dateN', 'photo'];
 
     public function films()
     {
