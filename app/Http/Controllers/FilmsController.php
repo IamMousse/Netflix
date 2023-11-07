@@ -26,6 +26,7 @@ class FilmsController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * @return IlluminateViewView
      */
     public function create()
     {

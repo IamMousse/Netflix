@@ -5,7 +5,7 @@
 @section('contenu')
 
 <br><br><br><br>
-<form method="post" action="{{route('personnes.store')}}">
+<form method="post" action="{{route('films.store')}}">
     @csrf 
     <div class="container-fluid text-center">
         <div class="row">
@@ -29,15 +29,25 @@
         </div>
         <div class="row">
             <div class="col-xl-2"></div>
-            <div class="col-xl-4">
+            <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="rating">Rating du film</label>
                 <input type="text" class="form-control" id="rating" placeholder="Résumer du film" name="rating">
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="genre">Catégories du film</label>
                 <input type="text" class="form-control" id="genre" placeholder="Comedie, Horreur, etc" name="genre">
+            </div>
+            <div class="col-xl-2">
+                <br>
+                <label class="form-label" for="realisateur_id">Réalisateur ID</label>
+                <input type="text" class="form-control" id="realisateur_id" placeholder="1" name="realisateur_id">
+            </div>
+            <div class="col-xl-2">
+                <br>
+                <label class="form-label" for="producteur_id">Producteur ID</label>
+                <input type="text" class="form-control" id="producteur_id" placeholder="1" name="producteur_id">
             </div>
             <div class="col-xl-2"></div>
         </div>
