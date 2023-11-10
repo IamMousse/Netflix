@@ -15,6 +15,9 @@ use App\Http\Controllers\PersonnesController;
 |
 */
 
+
+/* Section films */
+
 Route::get('/', 
 [FilmsController::class, 'index'])->name('films.index');
 
@@ -27,6 +30,9 @@ Route::get('/creation/films',
 Route::post('/films',
 [FilmsController::class, 'store'])->name('films.store');
 
+
+/* Section personnes */
+
 Route::get('/personnes', 
 [PersonnesController::class, 'index'])->name('personnes.index');
 
@@ -38,3 +44,12 @@ Route::get('/creation/personnes',
 
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
+
+
+/* Section Lien entre personne et films */
+
+Route::get('/lien',
+[PersonnesController::class, 'create_film_personne'])->name('personnes.create_film_personne');
+
+Route::post('/filmPersonne',
+[PersonnesController::class, 'store_film_personne'])->name('personnes.store_film_personne');

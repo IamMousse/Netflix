@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Personne;
 use App\Models\Film;
 
+use App\Http\Request\PersonnesRequest;
+
 class PersonnesController extends Controller
 {
     /**
@@ -30,12 +32,19 @@ class PersonnesController extends Controller
         return View('Netflix.create_personne');
     }
 
+    public function create_film_personne()
+    {
+        $nom_personne = Personne::orderBy('nom')->get();
+        $titre_film = Film::orderBy('titre')->get();
+        return View('Netflix.create_film_personne', compact('nom_personne', 'titre_film'));
+    }
+
     /**
      * Store a newly created resource in storage.
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PersonnesRequest $request)
     {
         try
         {
@@ -47,6 +56,33 @@ class PersonnesController extends Controller
             Log::debug($e);
         }
         return redirect()->route('personnes.index');
+    }
+
+    public function store_film_personne (Request $request)
+    {
+        try
+        {
+            $personne = Personne::find($request->personne_id);
+            $films = Film::find($request->film_id);
+
+            //Vérifier si la relation existe déjà
+            if($personne->films->contains($films))
+            {
+                Log::debug("La relation existe déjà");
+            }
+            else
+            {
+                $personne->films()->attach($films);
+                $personne->save();
+            }
+            return redirect()->route('films.index');
+        }
+        catch (\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('films.index');
+        }
+        return redirect()->route('films.index');
     }
 
     /**

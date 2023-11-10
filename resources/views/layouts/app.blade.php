@@ -21,7 +21,7 @@
         <a href="/personnes">Personnes</a>
         <a href="/creation/personnes">Ajouter Personne</a>
         <a href="/creation/films">Ajouter Film</a>
-        <a href="#">Recently Added</a>
+        <a href="/lien">Acteur->Film</a>
         <a target="_blank" href="https://codepen.io/cb2307/full/NzaOrm">Portfolio</a>        
       </nav>
       <nav class="sub-nav">

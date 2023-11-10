@@ -4,10 +4,17 @@
 
 @section('contenu')
 
-<br><br><br><br>
+<br><br>
 <form method="post" action="{{route('films.store')}}">
     @csrf 
     <div class="container-fluid text-center">
+    <div class="row">
+            <div class="col-xl-2"></div>
+            <div class="col-xl-8">
+                <h1>Formulaire pour ajouter un film</h1>
+            </div>
+            <div class="col-xl-2"></div>
+        </div>
         <div class="row">
             <div class="col-xl-2"></div>
             <div class="col-xl-4">
@@ -43,20 +50,19 @@
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
                 <select class="form-control" name="realisateur_id" id="realisateur_id">
-                    @foreach ($films as $film)
-                    @if ($film == $film->realisateur)
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{$personne_nom->id}}">{{$personneNom->nom}}</option>
-                    @endforeach
-                    @endif
-
+                        <option value="{{$personne_nom->id}}">{{$personne_nom->nom}}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="producteur_id">Producteur ID</label>
-                <input type="text" class="form-control" id="producteur_id" placeholder="1" name="producteur_id">
+                <select class="form-control" name="producteur_id" id="producteur_id">
+                    @foreach ($personnes_nom as $personne_nom)
+                        <option value="{{$personne_nom->id}}">{{$personne_nom->nom}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-xl-2"></div>
         </div>

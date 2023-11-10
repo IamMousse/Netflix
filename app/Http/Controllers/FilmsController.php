@@ -32,8 +32,8 @@ class FilmsController extends Controller
     public function create()
     {
         $films = Film::all();
-        $personnes_noms = Personne::orderBy('nom')->get();
-        return View('Netflix.create_film', compact('personnes_noms', 'films'));
+        $personnes_nom = Personne::orderBy('nom')->get();
+        return View('Netflix.create_film', compact('personnes_nom', 'films'));
     }
 
     /**
