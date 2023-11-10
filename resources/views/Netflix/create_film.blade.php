@@ -42,7 +42,16 @@
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
-                <input type="text" class="form-control" id="realisateur_id" placeholder="1" name="realisateur_id">
+                <select class="form-control" name="realisateur_id" id="realisateur_id">
+                    @foreach ($films as $film)
+                    @if ($film == $film->realisateur)
+                    @foreach ($personnes_nom as $personne_nom)
+                        <option value="{{$personne_nom->id}}">{{$personneNom->nom}}</option>
+                    @endforeach
+                    @endif
+
+                    @endforeach
+                </select>
             </div>
             <div class="col-xl-2">
                 <br>

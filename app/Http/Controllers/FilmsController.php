@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 use App\Models\Film;
+use App\Models\Personne;
 
 class FilmsController extends Controller
 {
@@ -30,7 +31,9 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        return View('Netflix.create_film');
+        $films = Film::all();
+        $personnes_noms = Personne::orderBy('nom')->get();
+        return View('Netflix.create_film', compact('personnes_noms', 'films'));
     }
 
     /**
