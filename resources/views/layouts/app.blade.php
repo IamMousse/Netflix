@@ -17,10 +17,10 @@
         <a id="logo" href="/"><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/logo.PNG?raw=true" alt="Logo Image"></a>
       </div>      
       <nav class="main-nav">                
-        <a href="/">Home</a>
+        <a href="/">Films</a>
         <a href="/personnes">Personnes</a>
-        <a href="/creation/personnes">Ajouter Personne</a>
-        <a href="/creation/films">Ajouter Film</a>
+        <a href="/creation/personnes">Personne++</a>
+        <a href="/creation/films">Film++</a>
         <a href="/lien">Acteur->Film</a>
         <a target="_blank" href="https://codepen.io/cb2307/full/NzaOrm">Portfolio</a>        
       </nav>
@@ -37,12 +37,14 @@
     <!-- FOOTER -->
     <!-- LINKS -->
     <section class="link">
+      <br><br><br><br>
       <div class="logos">
         <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
         <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
         <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
         <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
       </div>
+      <br>
       <div class="sub-links">
         <ul>
           <li><a href="#">Audio and Subtitles</a></li>
@@ -61,7 +63,7 @@
       </div>
     </section>
     <!-- END OF LINKS -->
-
+  
     <footer>
       <p>&copy 1997-2018 Netflix, Inc.</p>
       <p>Carlos Avila &copy 2018</p>
