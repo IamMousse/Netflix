@@ -19,6 +19,11 @@
                     <p>{{$film->resumer}}</p>
                     <h5>Durée : {{$film->duree}}</h5>
                     <h5>RottenTomato: {{$film->rating}}</h5>
+                    <div>
+                        <a href="{{route('films.edit', [$film])}}" class="btn btn-danger">
+                            Editer le film
+                        </a>
+                    </div>
             </div>
             <div class="col-xl-1"></div>
         </div>
@@ -35,7 +40,7 @@
                 <a href="{{route('personne.show', [$film->producteur])}}">
                     <img src="{{$film->producteur->photo}}" alt="" width="150px" height="150px">
                 </a>
-                @foreach($film->acteurs as $acteur)
+                @foreach($film->personnes as $acteur)
                 <a href="{{route('personne.show', [$acteur])}}">
                     <img src="{{$acteur->photo}}" alt="" width="150px" height="150px">
                 </a>

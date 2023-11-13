@@ -13,7 +13,7 @@ class Personne extends Model
 
     public function films()
     {
-        return $this->belongsToMany('Film::class');
+        return $this->belongsToMany(Film::class);
     }
 
     public function filmsRealises()

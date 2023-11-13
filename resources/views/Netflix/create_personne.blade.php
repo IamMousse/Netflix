@@ -36,7 +36,7 @@
                 <label class="form-label" for="photo">Photo de la personne</label>
                 <input type="text" class="form-control" id="photo" placeholder="lien de l'image" name="photo">
                 <br>
-                <button  type="submit" class="btn btn-primary">Enregistrer</button>
+                <button  type="submit" class="btn btn-success">Enregistrer</button>
             </div>
             <div class="col-xl-2"></div>
         </div>

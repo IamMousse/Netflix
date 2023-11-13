@@ -79,7 +79,7 @@
                 <label class="form-label" for="pochetteURL">Pochette URL du film</label>
                 <input type="text" class="form-control" id="pochetteURL" placeholder="lien de l'image" name="pochetteURL">
                 <br>
-                <button  type="submit" class="btn btn-primary">Enregistrer</button>
+                <button  type="submit" class="btn btn-success">Enregistrer</button>
             </div>
             <div class="col-xl-2"></div>
         </div>

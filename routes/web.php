@@ -30,6 +30,11 @@ Route::get('/creation/films',
 Route::post('/films',
 [FilmsController::class, 'store'])->name('films.store');
 
+Route::get('/films/{film}/modifier',
+[FilmsController::class, 'edit'])->name('films.edit');
+
+Route::patch('/films/{film}/modifier',
+[FilmsController::class, 'update'])->name('films.update');
 
 /* Section personnes */
 
@@ -49,7 +54,7 @@ Route::post('/personnes',
 /* Section Lien entre personne et films */
 
 Route::get('/lien',
-[PersonnesController::class, 'create_film_personne'])->name('personnes.create_film_personne');
+[FilmsController::class, 'create_film_personne'])->name('films.create_film_personne');
 
 Route::post('/filmPersonne',
-[PersonnesController::class, 'store_film_personne'])->name('personnes.store_film_personne');
+[FilmsController::class, 'store_film_personne'])->name('films.store_film_personne');

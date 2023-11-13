@@ -5,7 +5,7 @@
 @section('contenu')
 
 <br><br><br><br>
-<form method="post" action="{{route('personnes.store_film_personne')}}">
+<form method="post" action="{{route('films.store_film_personne')}}">
     @csrf 
     <div class="container-fluid text-center">
         <div class="row">
@@ -45,11 +45,11 @@
             <div class="col-xl-2"></div>
             <div class="col-xl-8">
                 <br>
-                <button  type="submit" class="btn btn-primary">Enregistrer</button>
+                <button type="submit" class="btn btn-success">Enregistrer</button>
             </div>
             <div class="col-xl-2"></div>
         </div>
         
-</from>
+</form>
 
 @endsection
