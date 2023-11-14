@@ -31,20 +31,11 @@
       <div class="row">
         <div class="col-xl-6 text-center">
           <h1>Films</h1>
-          <a href="{{route('personne.show', [$personne->filmsRealises])}}">
-            <img src="{{$personne->films->pochetteURL}}" alt="" width="150px" height="150px">
+          @foreach ($personne->films as $film)
+          <a href="{{route('films.show', [$film])}}">
+            <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
           </a>
-              
-              <!--
-                <a href="{{route('personne.show', [$personne->filmsProduits])}}">
-                    <img src="{{$personne->filmsProduits->pochetteURL}}" alt="" width="150px" height="150px">
-                </a>
-                @foreach(personnes as $acteur)
-                <a href="{{route('personne.show', [$acteur])}}">
-                    <img src="{{$personne->filmsActeur->pochetteURL}}" alt="" width="150px" height="150px">
-                </a>
-                @endforeach
-              -->
+          @endforeach
         </div>
       </div>
       <div class="row">
