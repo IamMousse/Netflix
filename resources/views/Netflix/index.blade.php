@@ -4,23 +4,44 @@
 
 @section('contenu')
 
+<br><br><br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-2 col-md-2 bg-danger">AAAAAAAAAAAA</div>
+    <div class="col-xl-8 col-md-8 bg-success">
+      @if(count($films))
+      <div class="card bg-dark" style="width: 200px; height: 300px;">
+      @foreach($films as $film)
+        <a href="{{route('film.show', [$film])}}">
+          <img src="{{$film->pochetteURL}}" class="card-img" alt="...">
+        </a>
+      @endforeach
+      </div>
+      @else
+      <h3>Il n'y a pas de films</h3>
+      @endif
+    </div>
+    <div class="col-xl-2 col-md-2 bg-warning">BBBBBBBBBBB</div>
+  </div>
+</div>
+
 <div class="wrapper">
 <!-- Add a carousel for the look -->
   <section class="main-container" >
-    <div class="location" id="home">
-      <h1 id="home">Popular on Netflix</h1>
-      <div class="box">
-        @if(count($films))
-          @foreach($films as $film)
-          <a href="{{route('film.show', [$film])}}">
-            <img src="{{$film->pochetteURL}}" alt="" width="250px">
-          </a>
-          @endforeach
-        @else
-          <h3>Il n'y a pas de films</h3>
-        @endif  
-      </div>
+  <div class="location" id="home">
+    <h1 id="home">Popular on Netflix</h1>
+    <div class="box">
+    @if(count($films))
+      @foreach($films as $film)
+      <a href="{{route('film.show', [$film])}}">
+        <img class="img-fluid" src="{{$film->pochetteURL}}" alt="" width="250px">
+      </a>
+      @endforeach
+    @else
+      <h3>Il n'y a pas de films</h3>
+    @endif  
     </div>
+  </div>
   </section>
 
   <section class="main-container" >
