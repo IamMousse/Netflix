@@ -30,16 +30,30 @@
       </div>
       <div class="row">
         <div class="col-xl-6 text-center">
-          <h1>Films</h1>
-          @foreach ($personne->films as $film)
-          <a href="{{route('films.show', [$film])}}">
+          
+          @foreach ($personne->filmsRealises as $film)
+          <h1>Films réalisés</h1>
+          <a href="{{route('film.show', [$film])}}">
+            <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
+          </a>
+          @endforeach
+
+          
+          @foreach($personne->filmsProduits as $film)
+          <h1>Films produits</h1>
+          <a href="{{route('film.show', [$film])}}">
+            <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
+          </a>
+          @endforeach
+
+          
+          @foreach($personne->filmsActeurs as $film)
+          <h1>Films jouer</h1>
+          <a href="{{route('film.show', [$film])}}">
             <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
           </a>
           @endforeach
         </div>
-      </div>
-      <div class="row">
-
       </div>
     </section>
 </div>
