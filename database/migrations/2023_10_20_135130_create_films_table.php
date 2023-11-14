@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('rating');
             $table->foreignId('realisateur_id');
             $table->foreignId('producteur_id');
+            $table->foreignId('acteur_id');
             $table->string('genre', 30);
             $table->timestamps();
         });

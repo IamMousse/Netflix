@@ -109,10 +109,13 @@ class FilmsController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @param int $id
+     * @return \Illuminate\Http\Response
      */
     public function edit(Film $film)
     {
-        return View('Netflix.edit_film', compact('film'));
+        $personnes_nom = Personne::orderBy('nom')->get(); 
+        return View('Netflix.edit_film', compact('film', 'personnes_nom'));
     }
 
     /**
@@ -147,6 +150,18 @@ class FilmsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try
+        {
+            $film = Film::findOrFail($id);
+            $film->acteurs()->detach();
+            $film->delete();
+            return redirect()->route('films.index')->with('message', "Suppression de " . $film->titre . " réussi");
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['La suppression n\'a pas fonctionné']);
+        }
+        return redirect()->route('films.index');
     }
 }

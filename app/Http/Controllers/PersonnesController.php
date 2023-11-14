@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Models\Personne;
 use App\Models\Film;
-use App\Http\Request\PersonnesRequest;
+use App\Http\Requests\PersonnesRequest;
+use Illuminate\Support\Facades\Log;
 
 class PersonnesController extends Controller
 {
@@ -61,18 +61,33 @@ class PersonnesController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * @param int $id
+     * @return \Illuminate\Http\Response
      */
-    public function edit(string $id)
+    public function edit(Personne $personne)
     {
-        //
+        return View('Netflix.edit_personne', compact('personne'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonnesRequest $request, Personne $personne)
     {
-        //
+        try
+        {
+            $personne->nom = $request->nom;
+            $personne->dateN = $request->dateN;
+            $personne->photo = $request->photo;
+            $personne->save();
+            return redirect()->route('personnes.index')->with('message', "Modification de " . $personne->nom . " réussi!");
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['la modification n\'a pas fonctionné']);
+        }
+        return redirect()->route('personnes.index');
     }
 
     /**
@@ -80,6 +95,17 @@ class PersonnesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try
+        {
+            $personne = Personne::findOrFail($id);
+            $personne->delete();
+            return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
+        }
+        catch(\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['la suppression n\'a pas fonctionné']);
+        }
+        return redirect()->route('personnes.index');
     }
 }

@@ -36,6 +36,9 @@ Route::get('/films/{film}/modifier',
 Route::patch('/films/{film}/modifier',
 [FilmsController::class, 'update'])->name('films.update');
 
+Route::delete('/films/{id}',
+[FilmsController::class, 'destroy'])->name('films.destroy');
+
 /* Section personnes */
 
 Route::get('/personnes', 
@@ -49,6 +52,15 @@ Route::get('/creation/personnes',
 
 Route::post('/personnes',
 [PersonnesController::class, 'store'])->name('personnes.store');
+
+Route::get('/personnes/{personne}/modifier',
+[PersonnesController::class, 'edit'])->name('personnes.edit');
+
+Route::patch('/personnes/{personne}/modifier',
+[PersonnesController::class, 'update'])->name('personnes.update');
+
+Route::delete('/personnes/{id}',
+[PersonnesController::class, 'destroy'])->name('personnes.destroy');
 
 
 /* Section Lien entre personne et films */
