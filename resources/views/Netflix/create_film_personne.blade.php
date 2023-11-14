@@ -21,6 +21,7 @@
                 <br>
                 <label class="form-label" for="film_id">Film ID</label>
                 <select class="form-control" name="film_id" id="film_id">
+                    <option value="">Veuillez choisir...</option>
                     @foreach ($titre_film as $film)
                         <option value="{{$film->id}}">{{$film->titre}}</option>
                     @endforeach
@@ -34,6 +35,7 @@
                 <br>
                 <label class="form-label" for="personne_id">Acteur ID</label>
                 <select class="form-control" name="personne_id" id="personne_id">
+                    <option value="">Veuillez choisir...</option>
                     @foreach ($nom_personne as $personne)
                         <option value="{{$personne->id}}">{{$personne->nom}}</option>
                     @endforeach

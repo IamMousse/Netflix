@@ -36,7 +36,7 @@ Route::get('/films/{film}/modifier',
 Route::patch('/films/{film}/modifier',
 [FilmsController::class, 'update'])->name('films.update');
 
-Route::delete('/films/{id}',
+Route::delete('/films/{id}/modifier',
 [FilmsController::class, 'destroy'])->name('films.destroy');
 
 /* Section personnes */
@@ -59,7 +59,7 @@ Route::get('/personnes/{personne}/modifier',
 Route::patch('/personnes/{personne}/modifier',
 [PersonnesController::class, 'update'])->name('personnes.update');
 
-Route::delete('/personnes/{id}',
+Route::delete('/personnes/{id}/personnes',
 [PersonnesController::class, 'destroy'])->name('personnes.destroy');
 
 

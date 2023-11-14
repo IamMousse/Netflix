@@ -60,8 +60,12 @@
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
                 <select class="form-control" name="realisateur_id" id="realisateur_id">
+                    <option value="">Veuillez choisir...</option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{old('realisateur_id', $personne_nom->id)}}">{{old('realisateur_id', $personne_nom->nom)}}</option>
+                        <option value=" {{$personne_nom->id}} " 
+                                        {{$personne_nom->id == old('realisateur_id') ? 'selected' : null}}>
+                            {{$personne_nom->nom}}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -69,8 +73,11 @@
                 <br>
                 <label class="form-label" for="producteur_id">Producteur ID</label>
                 <select class="form-control" name="producteur_id" id="producteur_id">
+                    <option value="">Veuillez choisir...</option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{$personne_nom->id}}">{{$personne_nom->nom}}</option>
+                        <option value="{{$personne_nom->id}}" {{$personne_nom->id == old('producteur_id') ? 'selected' : null}}>
+                            {{$personne_nom->nom}}
+                        </option>
                     @endforeach
                 </select>
             </div>
@@ -78,8 +85,11 @@
                 <br>
                 <label class="form-label" for="acteur">Acteur ID</label>
                 <select class="form-control" name="acteur_id" id="acteur_id">
+                    <option value="">Veuillez choisir...</option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{$personne_nom->id}}">{{$personne_nom->nom}}</option>
+                        <option value="{{$personne_nom->id}}" {{$personne_nom->id == old('acteur_id') ? 'selected' : null}}>
+                            {{$personne_nom->nom}}
+                        </option>
                     @endforeach
                 </select>
             </div>

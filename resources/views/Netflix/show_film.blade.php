@@ -45,6 +45,7 @@
                     <img src="{{$acteur->photo}}" alt="" width="150px" height="150px">
                 </a>
                 @endforeach
+            </div>
         </div>
       </div>
     </section>

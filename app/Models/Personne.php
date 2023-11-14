@@ -24,4 +24,8 @@ class Personne extends Model
     {
         return $this->hasMany(Film::class, 'producteur_id');
     }
+    public function filmsActeurs()
+    {
+        return $this->hasMany(Film::class, 'acteur_id');
+    }
 }
