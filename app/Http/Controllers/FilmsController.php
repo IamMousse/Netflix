@@ -33,7 +33,7 @@ class FilmsController extends Controller
     {
         $films = Film::all();
         $personnes_nom = Personne::orderBy('nom')->get(); 
-        return View('Netflix.create_film', compact('personnes_nom', 'films'));
+        return View('Netflix.create', compact('personnes_nom', 'films'));
     }
 
     /**
@@ -104,7 +104,7 @@ class FilmsController extends Controller
      */
     public function show(Film $film)
     {
-        return View('Netflix.show_film', compact('film'));
+        return View('Netflix.show', compact('film'));
     }
 
     /**
@@ -115,7 +115,7 @@ class FilmsController extends Controller
     public function edit(Film $film)
     {
         $personnes_nom = Personne::orderBy('nom')->get(); 
-        return View('Netflix.edit_film', compact('film', 'personnes_nom'));
+        return View('Netflix.edit', compact('film', 'personnes_nom'));
     }
 
     /**

@@ -18,7 +18,7 @@ class PersonnesController extends Controller
         $personnes = Personne::all();
         $films = Film::all();
         $fillable = Personne::all();
-        return View('Netflix.personne', compact('personnes', 'films', 'fillable')); 
+        return View('Personne.index', compact('personnes', 'films', 'fillable')); 
     }
 
     /**
@@ -27,7 +27,7 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        return View('Netflix.create_personne');
+        return View('Personne.create');
     }
 
 
@@ -56,7 +56,7 @@ class PersonnesController extends Controller
      */
     public function show(Personne $personne)
     {
-        return View('Netflix.show_personne', compact('personne'));
+        return View('Personne.show', compact('personne'));
     }
 
     /**
@@ -66,7 +66,7 @@ class PersonnesController extends Controller
      */
     public function edit(Personne $personne)
     {
-        return View('Netflix.edit_personne', compact('personne'));
+        return View('Personne.edit', compact('personne'));
     }
 
     /**

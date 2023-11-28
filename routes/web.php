@@ -70,3 +70,14 @@ Route::get('/lien',
 
 Route::post('/filmPersonne',
 [FilmsController::class, 'store_film_personne'])->name('films.store_film_personne');
+
+
+/* Section usager */
+Route::get('/login', 
+[UsagersController::class, 'index'])->name('showLoginForm');
+
+Route::get('/login', 
+[UsagersController::class, 'login'])->name('login');
+
+Route::get('/logout', 
+[UsagersController::class, 'logout'])->name('logout')->middleware('auth');

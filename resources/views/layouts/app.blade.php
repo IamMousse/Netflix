@@ -22,12 +22,12 @@
         <a href="/creation/personnes">Personne++</a>
         <a href="/creation/films">Film++</a>
         <a href="/lien">Acteur->Film</a>
-        <a target="_blank" href="https://codepen.io/cb2307/full/NzaOrm">Portfolio</a>        
+        <a href="">Portfolio</a>        
       </nav>
       <nav class="sub-nav">
         <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
         <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-        <a href="#">Account</a>        
+        <a href="/logout">Logout</a>        
       </nav>      
     </header>
     <!-- END OF HEADER -->
