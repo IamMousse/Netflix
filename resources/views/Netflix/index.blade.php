@@ -4,6 +4,7 @@
 
 @section('contenu')
 
+@auth
 <br><br><br>
 
 <div class="col-xl-12">
@@ -148,5 +149,10 @@
     </div>
   </div>
 </div>
+
+@else
+    <h1>Veuillez-vous connecter!</h1>
+    <a href="{{route('showLoginForm')}}" class="btn btn-primary">Page de connexion</a>
+@endauth
 
 @endsection
