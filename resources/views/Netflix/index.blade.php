@@ -154,9 +154,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xl-2"></div>
-    <div class="col-xl-8">
-      <h1>Veuillez-vous connecter!</h1>
-      <a href="{{route('showLoginForm')}}" class="btn btn-primary">Page de connexion</a>
+    <div class="col-xl-8 text-center">
+      <br><br><br>
+      <h1>Veuillez-vous connecter SVP</h1>
+      <a href="{{route('showLoginForm')}}" class="btn btn-danger text-dark">Connect</a>
     </div>
     <div class="col-xl-2"></div>
   </div>
