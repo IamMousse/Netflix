@@ -74,10 +74,10 @@ Route::post('/filmPersonne',
 
 
 /* Section usager */
-Route::get('/login/index', 
+Route::get('/login', 
 [UsagersController::class, 'index'])->name('showLoginForm');
 
-Route::get('/login', 
+Route::post('/login', 
 [UsagersController::class, 'login'])->name('login');
 
 Route::get('/logout', 

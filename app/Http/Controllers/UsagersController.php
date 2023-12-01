@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Log;
+use App\Models\Usager;
+
 
 class UsagersController extends Controller
 {
@@ -21,11 +24,15 @@ class UsagersController extends Controller
      */
     public function login(Request $request)
     {
+        Log::debug("BANANEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         $reussi = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+        Log::debug(''.$reussi);
         if($reussi){
+            Log::debug("ORANGEEEEEEEEEEEEEEEEE");
             return redirect()->route('Netflix.index')->with('message', "Connexion réussi");
         }
         else{
+            Log::debug("ANANNANANNANANANNAASSSSS");
             return redirect()->route('login')->withErrors(['Informations invalides']);
         }
     }
