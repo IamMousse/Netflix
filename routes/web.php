@@ -43,7 +43,7 @@ Route::delete('/films/{id}/modifier',
 /* Section personnes */
 
 Route::get('/personnes', 
-[PersonnesController::class, 'index'])->name('personnes.index');
+[PersonnesController::class, 'index'])->name('personnes.index')->middleware('auth');
 
 Route::get('/personnes/{personne}', 
 [PersonnesController::class, 'show'])->name('personne.show')->middleware('auth');
@@ -80,5 +80,5 @@ Route::get('/login',
 Route::post('/login', 
 [UsagersController::class, 'login'])->name('login');
 
-Route::get('/logout', 
+Route::post('/logout', 
 [UsagersController::class, 'logout'])->name('logout')->middleware('auth');

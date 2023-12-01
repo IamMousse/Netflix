@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Usager;
 
 
+
 class UsagersController extends Controller
 {
     /**
@@ -16,7 +17,8 @@ class UsagersController extends Controller
      */
     public function index()
     {
-        return view('Auth.login');
+        $fillable = Usager::all();
+        return view('Auth.login', compact('fillable'));
     }
 
     /**
@@ -24,17 +26,22 @@ class UsagersController extends Controller
      */
     public function login(Request $request)
     {
-        Log::debug("BANANEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
         $reussi = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
         Log::debug(''.$reussi);
         if($reussi){
-            Log::debug("ORANGEEEEEEEEEEEEEEEEE");
-            return redirect()->route('Netflix.index')->with('message', "Connexion réussi");
+            return redirect()->route('films.index')->with('message', "Connexion réussi");
         }
         else{
-            Log::debug("ANANNANANNANANANNAASSSSS");
             return redirect()->route('login')->withErrors(['Informations invalides']);
         }
+    }
+
+    public function logout (Request $request)
+    {
+        Log::debug("NOOOOOOOOOOOOOOOOOOO");
+        Auth::logout();
+        Session::flush();
+        return redirect()->route('films.index')->with("message",'Déconnexion réussi');
     }
 
     /**
