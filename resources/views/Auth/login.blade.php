@@ -14,9 +14,9 @@
         <br><br><br>
         <div class="row">
             <div class="col-xl-4"></div>
-            <div class="col-xl-4 card text-center">
-                <div class="card-header mb-3"> <b> Connexion </b> </div>
-                <div class="card-body">
+            <div class="col-xl-4 card bg-dark text-white text-center">
+                <div class="card-header bg-dark text-white mb-3"> <b> Connexion </b> </div>
+                <div class="card-body text-white bg-secondary">
                     <form method="post" action="{{route('login')}}">
                         @csrf 
                         <div class="row">
@@ -46,8 +46,9 @@
                         </div>
                     </form>
                 </div>
-                <div class="card-footer text-muted">
+                <div class="card-footer">
                   options supplémentaire
+                  <br>
                 </div>
             </div>
             <div class="col-xl-4"></div>

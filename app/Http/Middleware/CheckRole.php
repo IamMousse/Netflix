@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\Usager;
 
 class CheckRole
 {
@@ -13,12 +14,14 @@ class CheckRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ...$roles): Response
     {
         $user = $request->user();
 
         if (!$user) {
-            return redirect()->route('login');
+            if (!$request->is('login')){
+                return redirect()->route('login');
+            }
         }
         else {
             if (!in_array($user->role, $roles)) {

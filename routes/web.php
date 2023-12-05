@@ -82,3 +82,9 @@ Route::post('/login',
 
 Route::post('/logout', 
 [UsagersController::class, 'logout'])->name('logout')->middleware('auth');
+
+Route::get('/orange', 
+[UsagersController::class, 'index'])->name('home')->middleware('CheckRole:admin');
+
+Route::get('/home2',
+[UsagersController::class, 'index2'])->name('home2')->middleware('CheckRole:admin,normal,enfant');

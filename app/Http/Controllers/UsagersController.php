@@ -41,7 +41,7 @@ class UsagersController extends Controller
         Log::debug("NOOOOOOOOOOOOOOOOOOO");
         Auth::logout();
         Session::flush();
-        return redirect()->route('films.index')->with("message",'Déconnexion réussi');
+        return redirect()->route('showLoginForm')->with("message",'Déconnexion réussi');
     }
 
     /**
