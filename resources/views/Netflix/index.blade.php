@@ -7,22 +7,6 @@
 @auth
 <br><br><br>
 
-@role('admin,')
-<h2>ADMINISTRATEUR</h2>
-@endrole
-
-@role('normal')
-<h2>NORMAL</h2>
-@endrole
-
-@role('enfant')
-<H2>ENFANT</H2>
-@endrole
-
-@role('admin, normal')
-<h2>ADMINISTRATEUR OU NORMAL</h2>
-@endrole
-
 <div class="col-xl-12">
   
   <div id="carouselExampleCaptions" class="carousel slide">
@@ -70,6 +54,27 @@
   </div>
 
 </div>
+
+
+@role('admin')
+<br>
+<h2>ADMINISTRATEUR</h2>
+@endrole
+
+@role('normal')
+<br>
+<h2>NORMAL</h2>
+@endrole
+
+@role('enfant')
+<br>
+<H2>ENFANT</H2>
+@endrole
+
+@role('admin','normal')
+<br>
+<h2>ADMINISTRATEUR OU NORMAL</h2>
+@endrole
 
 <div class="wrapper">
   <div class="container-fluid">
