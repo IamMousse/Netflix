@@ -114,8 +114,11 @@ class FilmsController extends Controller
      */
     public function edit(Film $film)
     {
+        $realisateur = $film->realisateur;
+        $producteur = $film->producteur;
+        $acteur = $film->acteur;
         $personnes_nom = Personne::orderBy('nom')->get(); 
-        return View('Netflix.edit', compact('film', 'personnes_nom'));
+        return View('Netflix.edit', compact('film', 'personnes_nom', 'realisateur', 'producteur', 'acteur'));
     }
 
     /**

@@ -24,11 +24,32 @@
         <a href="/lien">Acteur->Film</a>
         <a href="">Portfolio</a>        
       </nav>
-      <nav class="sub-nav">
-        <form method="post" action="{{route('logout')}}">
-          @csrf
-          <button type="submit" class="btn btn-danger text-dark">Logout</button>
-        </form>      
+      <nav class="sub">
+        <div>
+          <form method="post" action="{{route('logout')}}">
+            @csrf
+            <button type="submit" class="btn btn-warning text-dark">Ajouter</button>
+          </form> 
+        </div>
+      </nav>
+      <nav class="sub">
+        <div>
+          <form method="post" action="{{route('logout')}}">
+            @csrf
+            <button type="submit" class="btn btn-success text-dark">Liste</button>
+          </form> 
+        </div>
+      </nav>
+      <nav class="sub">
+        <div></div>
+        <div></div>
+        <div>
+          <form method="post" action="{{route('logout')}}">
+            @csrf
+            <button type="submit" class="btn btn-danger text-dark">Logout</button>
+          </form> 
+        </div>
+          
       </nav>      
     </header>
     <!-- END OF HEADER -->

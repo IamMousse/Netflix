@@ -60,11 +60,11 @@
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
                 <select class="form-control" name="realisateur_id" id="realisateur_id">
+                    <option value="{{$realisateur->id}}"> {{$realisateur->nom}} </option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value=" {{$personne_nom->id}} "
-                            {{$personne_nom->id == old('realisateur_id') ? 'selected' : null}}>
-                            {{$personne_nom->nom}}
-                        </option>
+                        @if($personne_nom->id!=$realisateur->id)
+                            <option value="{{old('id', $personne_nom->id)}}">{{$personne_nom->nom}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
@@ -72,12 +72,11 @@
                 <br>
                 <label class="form-label" for="producteur_id">Producteur ID</label>
                 <select class="form-control" name="producteur_id" id="producteur_id">
-                    <option value="">Veuillez choisir...</option>
+                    <option value="{{$producteur->id}}"> {{$producteur->nom}} </option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{$personne_nom->id}}" 
-                            {{$personne_nom->id == old('producteur_id') ? 'selected' : null }}>
-                            {{$personne_nom->nom}}
-                        </option>
+                        @if($personne_nom->id!=$producteur->id)
+                            <option value="{{old('id', $personne_nom->id)}}">{{$personne_nom->nom}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
@@ -85,11 +84,11 @@
                 <br>
                 <label class="form-label" for="acteur">Acteur ID</label>
                 <select class="form-control" name="acteur_id" id="acteur_id">
-                    <option value="">Veuillez choisir...</option>
+                    <option value="{{$acteur->id}}"> {{$acteur->nom}} </option>
                     @foreach ($personnes_nom as $personne_nom)
-                        <option value="{{$personne_nom->id}}" {{$personne_nom->id == old('acteur_id') ? 'selected' : null}}>
-                            {{$personne_nom->nom}}
-                        </option>
+                        @if($personne_nom->id!=$acteur->id)
+                            <option value="{{old('id', $personne_nom->id)}}">{{$personne_nom->nom}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
