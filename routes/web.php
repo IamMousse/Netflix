@@ -88,3 +88,29 @@ Route::get('/orange',
 
 Route::get('/home2',
 [UsagersController::class, 'index2'])->name('home2')->middleware('CheckRole:admin,normal,enfant');
+
+/* ajouter usager */
+Route::get('/creation/usagers',
+[UsagersController::class, 'create'])->name('usagers.create')->middleware('auth');
+
+Route::post('/creation/usagers',
+[UsagersController::class, 'store'])->name('usagers.store')->middleware('auth');
+
+
+/*********** MODIFIERRRRR ***********/
+// PAGE USAGER DETAIL
+Route::get('/usagers/{usager}', 
+[UsagersController::class, 'show'])->name('usager.show')->middleware('auth');
+// PAGE USAGER 
+Route::get('/usagers', 
+[UsagersController::class, 'usagerindex'])->name('usagers.usagerindex')->middleware('auth');
+
+// FORMULAIRE MODIFICATION USAGER
+Route::get('/usagers/{usager}/modifier/',
+[UsagersController::class, 'edit'])->name('usagers.edit')->middleware('auth');
+
+Route::patch('/usagers/{usager}/modifier',
+[UsagersController::class, 'update'])->name('usagers.update')->middleware('auth');
+
+Route::delete('/usagers/{usager}/supprimer', 
+[UsagersController::class, 'destroy'])->name('usagers.destroy')->middleware('auth');

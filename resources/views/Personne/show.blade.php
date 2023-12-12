@@ -20,11 +20,13 @@
               <h3>{{$personne->dateN}}</h3>
               <br><br><br>
             </div>
+            @role('admin')
             <div class="row">
               <a href="{{route('personnes.edit', [$personne])}}" class="btn btn-danger">
                 Editer le film
               </a>
             </div>
+            @endrole
             <div class="row">
               @foreach ($personne->filmsRealises as $film)
                 <h1>Films réalisés</h1>
@@ -47,9 +49,6 @@
                 </a>
                 @endforeach
             </div>
-
-            
-
             <div class="col-xl-2"></div>
         </div>
 

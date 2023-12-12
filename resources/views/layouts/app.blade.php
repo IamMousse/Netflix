@@ -18,12 +18,17 @@
       </div>      
       <nav class="main-nav">                
         <a href="/">Films</a>
+      @role('admin', 'normal')
         <a href="/personnes">Personnes</a>
+      @endrole
+      @role('admin')
         <a href="/creation/personnes">Personne++</a>
         <a href="/creation/films">Film++</a>
         <a href="/lien">Acteur->Film</a>
+      @endrole
         <a href="">Portfolio</a>        
       </nav>
+      @role('admin')
       <nav class="sub">
         <div>
           <form method="post" action="{{route('logout')}}">
@@ -40,6 +45,7 @@
           </form> 
         </div>
       </nav>
+      @endrole
       <nav class="sub">
         <div></div>
         <div></div>

@@ -19,11 +19,13 @@
                     <p>{{$film->resumer}}</p>
                     <h5>Durée : {{$film->duree}}</h5>
                     <h5>RottenTomato: {{$film->rating}}</h5>
+                    @role('admin')
                     <div>
                         <a href="{{route('films.edit', [$film])}}" class="btn btn-danger">
                             Editer le film
                         </a>
                     </div>
+                    @endrole
             </div>
             <div class="col-xl-1"></div>
         </div>
