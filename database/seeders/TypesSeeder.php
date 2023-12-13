@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+//use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use DB;
 
@@ -13,7 +13,7 @@ class TypesSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tables')->insert([
+        DB::table('types_films')->insert([
             [
                 'id' => 1,
                 'genre' => 'Comedie'
