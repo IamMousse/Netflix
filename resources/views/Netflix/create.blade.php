@@ -48,17 +48,17 @@
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="duree">Durée du film en minute</label>
-                <input type="number" class="form-control" id="duree" name="duree">
+                <input type="number" class="form-control" id="duree" placeholder="60" name="duree">
             </div>
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="annee">Annee de présentation du film</label>
-                <input type="year" class="form-control" id="annee" name="annee">
+                <input type="year" class="form-control" id="annee" placeholder="2000" name="annee">
             </div>
             <div class="col-xl-2"></div>
         </div>
         <div class="row">
-            <div class="col-xl-3"></div>
+            <div class="col-xl-2"></div>
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
@@ -89,7 +89,17 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-xl-3"></div>
+            <div class="col-xl-2">
+                <br>
+                <label class="form-label" for="acteur">Type de film</label>
+                <select class="form-control" id="id" name="type_id">
+                    <option value="" selected>Veuillez choisir un type de film</option>
+                    @foreach($types as $type)
+                    <option value="{{$type->id}}">{{$type->genre}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="col-xl-2"></div>
         </div>
         <div class="row">
             <div class="col-xl-2"></div>

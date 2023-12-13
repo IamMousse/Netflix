@@ -8,6 +8,7 @@
 <h1>Vous n'avez pas accès à cette Page...</h1>
 @endrole
 
+<!-- À modifier -->
 <br><br>
 @role('admin')
 <form method="post" action="{{route('personnes.store')}}">
@@ -21,16 +22,25 @@
             <div class="col-xl-2"></div>
         </div>
         <div class="row">
-            <div class="col-xl-2"></div>
+            <div class="col-xl-4"></div>
             <div class="col-xl-4">
                 <br>
                 <label class="form-label" for="nom">Nom de la personne</label>
                 <input type="text" class="form-control" id="nom" placeholder="Nom de la personne" name="nom">
             </div>
+            <div class="col-xl-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-xl-2"></div>
             <div class="col-xl-4">
                 <br>
                 <label class="form-label" for="dateN">Date de naissance</label>
                 <input type="date" class="form-control" id="dateN" name="dateN">
+            </div>
+            <div class="col-xl-4">
+                <br>
+                <label class="form-label" for="dateDece">Date de décès</label>
+                <input type="date" class="form-control" id="dateDece" name="dateDece">
             </div>
             <div class="col-xl-2"></div>
         </div>
