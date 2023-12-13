@@ -31,7 +31,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 1,
                 'producteur_id' =>  2,
                 'acteur_id' => 3,
-                'genre' => 'Action',
+                'type_id' => 6,
             ],
             [
                 'id' => 2,
@@ -46,7 +46,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 4,
                 'producteur_id' =>  5,
                 'acteur_id' => 6,
-                'genre' => 'Horreur',
+                'type_id' => 3,
             ],
             [
                 'id' => 3,
@@ -63,7 +63,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 7,
                 'producteur_id' => 8,
                 'acteur_id' => 9,
-                'genre' => 'Action',
+                'type_id' => 6,
             ],
             [
                 'id' => 4,
@@ -78,7 +78,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 10,
                 'producteur_id' =>  11,
                 'acteur_id' => 12,
-                'genre' => 'Comedie',
+                'type_id' => 1,
             ],
             [
                 'id' => 5,
@@ -95,7 +95,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 13,
                 'producteur_id' =>  14,
                 'acteur_id' => 15,
-                'genre' => 'Horreur',
+                'type_id' => 3,
             ],
             [
                 'id' => 6,
@@ -117,7 +117,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 16,
                 'producteur_id' =>  17,
                 'acteur_id' => 18,
-                'genre' => 'Action',
+                'type_id' => 6,
             ],
             [
                 'id' => 7,
@@ -136,7 +136,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 19,
                 'producteur_id' =>  20,
                 'acteur_id' => 21,
-                'genre' => 'Anime',
+                'type_id' => 10,
             ],
             [
                 'id' => 8,
@@ -152,7 +152,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 22,
                 'producteur_id' =>  23,
                 'acteur_id' => 24,
-                'genre' => 'Documentaire',
+                'type_id' => 5,
             ],
             [
                 'id' => 9,
@@ -170,7 +170,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 25,
                 'producteur_id' =>  26,
                 'acteur_id' => 27,
-                'genre' => 'Action',
+                'type_id' => 6,
             ],
             [
                 'id' => 10,
@@ -188,7 +188,7 @@ class FilmsSeeder extends Seeder
                 'realisateur_id' => 28,
                 'producteur_id' =>  29,
                 'acteur_id' => 30,
-                'genre' => 'Comedie',
+                'type_id' => 1,
             ],
         ]);    
     }

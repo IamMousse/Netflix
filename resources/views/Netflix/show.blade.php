@@ -3,6 +3,7 @@
 @section('title', "Zoom sur le film")
 @section('contenu')
 
+@role('admin','normal','enfant')
 <div id="bg" class="wrapper black">
     <section class="main-container" >
       <div class="location" id="home">
@@ -53,5 +54,5 @@
     </section>
 </div>
 
-
+@endrole
 @endsection

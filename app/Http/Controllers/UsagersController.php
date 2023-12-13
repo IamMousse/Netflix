@@ -26,6 +26,13 @@ class UsagersController extends Controller
         return view('Auth.login', compact('fillable'));
     }
 
+    public function usagerindex()
+    {
+        $fillable = Usager::all();
+        $usagers = Usager::all();
+        return view('Auth.index', compact('usagers','fillable'));
+    }
+
     /**
      * Validation if allowed to see website
      */

@@ -18,7 +18,10 @@ class PersonnesController extends Controller
         $personnes = Personne::all();
         $films = Film::all();
         $fillable = Personne::all();
-        return View('Personne.index', compact('personnes', 'films', 'fillable')); 
+        $shany = Personne::where('id', '=', 1)->get();
+        $animation = Personne::where('id', '=', 2)->get();
+        $animal = Personne::where('id', '=', 3)->get();
+        return View('Personne.index', compact('personnes', 'films', 'fillable', 'shany', 'animation', 'animal')); 
     }
 
     /**
@@ -79,6 +82,9 @@ class PersonnesController extends Controller
             $personne->nom = $request->nom;
             $personne->dateN = $request->dateN;
             $personne->photo = $request->photo;
+            $personne->dateDece = $request->dateDece;
+            $personne->sexe = $request->sexe;
+            $personne->metier = $request->metier;
             $personne->save();
             return redirect()->route('personnes.index')->with('message', "Modification de " . $personne->nom . " réussi!");
         }
@@ -98,6 +104,9 @@ class PersonnesController extends Controller
         try
         {
             $personne = Personne::findOrFail($id);
+            //Si un film a des acteurs, on ne peut pas le supprimer.
+            $personne->films()->detach();
+            
             $personne->delete();
             return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
         }

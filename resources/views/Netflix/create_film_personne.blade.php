@@ -4,7 +4,13 @@
 
 @section('contenu')
 
+@role('normal', 'enfant')
+<h1>Vous n'avez pas accès à cette Page...</h1>
+@endrole
+
+
 <br><br><br><br>
+@role('admin')
 <form method="post" action="{{route('films.store_film_personne')}}">
     @csrf 
     <div class="container-fluid text-center">
@@ -53,5 +59,5 @@
         </div>
         
 </form>
-
+@endrole
 @endsection

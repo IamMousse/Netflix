@@ -4,6 +4,12 @@
 
 @section('contenu')
 
+@role('enfant')
+<h1>Vous n'avez pas accès à cette Page...</h1>
+@endrole
+
+<br><br>
+@role('admin','normal')
 <div class="wrapper">
   <section class="main-container" >
     <div class="location" id="tous">
@@ -70,6 +76,7 @@
       @endif   
     </div>
   </section>
-
 </div>
+
+@endrole
 @endsection

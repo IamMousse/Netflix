@@ -9,7 +9,7 @@ class Film extends Model
 {
     protected $table = 'films';
     use HasFactory;
-    protected $fillable = ['titre', 'resumer', 'duree', 'annee', 'trailer', 'pochetteURL', 'rating', 'realisateur_id', 'producteur_id', 'genre'];
+    protected $fillable = ['titre', 'resumer', 'duree', 'annee', 'trailer', 'pochetteURL', 'rating', 'realisateur_id', 'producteur_id', 'acteur_id', 'types_id'];
 
     public function realisateur()
     {
@@ -29,6 +29,11 @@ class Film extends Model
     public function acteur()
     {
         return $this->belongsTo(Personne::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo('App\Models\Type');
     }
 
 }

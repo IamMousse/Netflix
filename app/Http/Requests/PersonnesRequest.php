@@ -25,6 +25,7 @@ class PersonnesRequest extends FormRequest
             'nom' => 'required|max:100',
             'dateN' => 'required|date',
             'photo' => 'max:1000',
+            //add metier dateDece sexe
         ];
     }
     public function messages()

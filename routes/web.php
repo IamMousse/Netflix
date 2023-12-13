@@ -103,7 +103,7 @@ Route::get('/usagers/{usager}',
 [UsagersController::class, 'show'])->name('usager.show')->middleware('auth');
 // PAGE USAGER 
 Route::get('/usagers', 
-[UsagersController::class, 'usagerindex'])->name('usagers.usagerindex')->middleware('auth');
+[UsagersController::class, 'usagerindex'])->name('usagers.index')->middleware('auth');
 
 // FORMULAIRE MODIFICATION USAGER
 Route::get('/usagers/{usager}/modifier/',

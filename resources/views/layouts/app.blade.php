@@ -30,33 +30,21 @@
       </nav>
       @role('admin')
       <nav class="sub">
-        <div>
-          <form method="post" action="{{route('logout')}}">
-            @csrf
-            <button type="submit" class="btn btn-warning text-dark">Ajouter</button>
-          </form> 
-        </div>
-      </nav>
-      <nav class="sub">
-        <div>
-          <form method="post" action="{{route('logout')}}">
-            @csrf
-            <button type="submit" class="btn btn-success text-dark">Liste</button>
-          </form> 
-        </div>
+        <a href="/creation/usagers">Usagers++</a>
+        <a href="/usagers">Usagers</a>
       </nav>
       @endrole
       <nav class="sub">
-        <div></div>
-        <div></div>
         <div>
           <form method="post" action="{{route('logout')}}">
             @csrf
             <button type="submit" class="btn btn-danger text-dark">Logout</button>
           </form> 
         </div>
-          
-      </nav>      
+      </nav>
+      
+      <!-- Alerte -->
+
     </header>
     <!-- END OF HEADER -->
 

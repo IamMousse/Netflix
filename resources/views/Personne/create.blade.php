@@ -4,7 +4,12 @@
 
 @section('contenu')
 
+@role('normal', 'enfant')
+<h1>Vous n'avez pas accès à cette Page...</h1>
+@endrole
+
 <br><br>
+@role('admin')
 <form method="post" action="{{route('personnes.store')}}">
     @csrf 
     <div class="container-fluid text-center">
@@ -43,4 +48,5 @@
     </div>
 </form>
 
+@endrole
 @endsection

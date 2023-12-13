@@ -106,26 +106,7 @@
 @endrole
 
 
-@role('admin')
-<br>
-<h2>ADMINISTRATEUR</h2>
-@endrole
-
-@role('normal')
-<br>
-<h2>NORMAL</h2>
-@endrole
-
-@role('enfant')
-<br>
-<H2>ENFANT</H2>
-@endrole
-
-@role('admin','normal')
-<br>
-<h2>ADMINISTRATEUR OU NORMAL</h2>
-@endrole
-
+@role('admin', 'normal')
 <div class="wrapper">
   <div class="container-fluid">
     <div class="row">
@@ -182,6 +163,7 @@
       </div>
       <div class="col-xl-1"></div>
     </div>
+@endrole
     <div class="row">
       <div class="col-xl-1"></div>
       <div class="col-xl-10">
@@ -234,5 +216,6 @@
   </div>
 </div>
 @endauth
+
 
 @endsection

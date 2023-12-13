@@ -4,7 +4,12 @@
 
 @section('contenu')
 
+@role('normal', 'enfant')
+<h1>Vous n'avez pas accès à cette Page...</h1>
+@endrole
+
 <br><br>
+@role('admin')
 <div class="row">
     <div class="col-xl-2"></div>
     <div class="col-xl-8">
@@ -59,4 +64,5 @@
     </div>
 </form>
 
+@endrole
 @endsection

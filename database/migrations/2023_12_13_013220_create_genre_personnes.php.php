@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personnes', function (Blueprint $table) {
+        Schema::create('genre_personnes', function (Blueprint $table) {
             $table->id();
-            $table->string('nom', 100);
-            $table->date('dateN');
-            $table->date('dateDece');
-            $table->string('sexe','25');
-            $table->string('metier','100');
-            $table->string('photo', 1000);
+            $table->string('typegenre', '100');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personnes');
+        Schema::dropIfExists('genre_personnes');
     }
 };

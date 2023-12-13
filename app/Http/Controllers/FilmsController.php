@@ -16,13 +16,20 @@ class FilmsController extends Controller
     public function index()
     {
         $films = Film::all();
-        $documentaires = Film::where('genre', '=', 'Documentaire')->get();
-        $horreurs = Film::where('genre', '=', 'Horreur')->get();
-        $actions = Film::where('genre', '=', 'Action')->get();
-        $animes = Film::where('genre', '=', 'Anime')->get();
-        $comedies = Film::where('genre', '=', 'Comedie')->get();
         $fillable = Film::all();
-        return View('Netflix.index', compact('films','documentaires', 'horreurs', 'actions', 'animes', 'comedies', 'fillable')); 
+        $types = Type::all();
+        $comedie = Film::where('type_id', '=', 1)->get();
+        $criminel = Film::where('type_id', '=', 2)->get();
+        $horreur = Film::where('type_id', '=', 3)->get();
+        $western = Film::where('type_id', '=', 4)->get();
+        $sciencefiction = Film::where('type_id', '=', 5)->get();
+        $action = Film::where('type_id', '=', 6)->get();
+        $aventure = Film::where('type_id', '=', 7)->get();
+        $fantastique = Film::where('type_id', '=', 8)->get();
+        $romance = Film::where('type_id', '=', 9)->get();
+        $anime = Film::where('type_id', '=', 10)->get();
+
+        return View('Netflix.index', compact('films', 'personnes', 'types', 'comedie', 'criminel', 'horreur', 'western', 'sciencefiction', 'action', 'aventure', 'fantastique', 'romance', 'anime', 'fillable')); 
     }
 
     /**
@@ -31,9 +38,9 @@ class FilmsController extends Controller
      */
     public function create()
     {
-        $films = Film::all();
+        $types = Type::orderBy('genre')->get();
         $personnes_nom = Personne::orderBy('nom')->get(); 
-        return View('Netflix.create', compact('personnes_nom', 'films'));
+        return View('Netflix.create', compact('personnes_nom', 'types'));
     }
 
     /**
@@ -117,8 +124,10 @@ class FilmsController extends Controller
         $realisateur = $film->realisateur;
         $producteur = $film->producteur;
         $acteur = $film->acteur;
+        $type = $film->type;
         $personnes_nom = Personne::orderBy('nom')->get(); 
-        return View('Netflix.edit', compact('film', 'personnes_nom', 'realisateur', 'producteur', 'acteur'));
+        $types = Type::orderBy('genre')->get();
+        return View('Netflix.edit', compact('film', 'personnes_nom', 'realisateur', 'producteur', 'acteur', 'type', 'types'));
     }
 
     /**
@@ -129,11 +138,10 @@ class FilmsController extends Controller
         try
         {
             $film->titre = $request->titre;
+            $film->resumer = $request->resumer;
             $film->duree = $request->duree;
             $film->annee = $request->annee;
             $film->rating = $request->rating;
-            $film->genre = $request->genre;
-            $film->resumer = $request->resumer;
             $film->trailer = $request->trailer;
             $film->pochetteURL = $request->pochetteURL;
 
@@ -156,7 +164,7 @@ class FilmsController extends Controller
         try
         {
             $film = Film::findOrFail($id);
-            $film->acteurs()->detach();
+            $film->personnes()->detach();
             $film->delete();
             return redirect()->route('films.index')->with('message', "Suppression de " . $film->titre . " réussi");
         }
