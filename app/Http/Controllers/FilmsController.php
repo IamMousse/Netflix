@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Film;
 use App\Models\Personne;
+use App\Models\Type;
 use App\Http\Requests\FilmRequest;
 use Illuminate\Support\Facades\Log;
 
@@ -16,20 +17,21 @@ class FilmsController extends Controller
     public function index()
     {
         $films = Film::all();
+        $personnes = Personne::all();
         $fillable = Film::all();
         $types = Type::all();
-        $comedie = Film::where('type_id', '=', 1)->get();
-        $criminel = Film::where('type_id', '=', 2)->get();
-        $horreur = Film::where('type_id', '=', 3)->get();
-        $western = Film::where('type_id', '=', 4)->get();
-        $sciencefiction = Film::where('type_id', '=', 5)->get();
-        $action = Film::where('type_id', '=', 6)->get();
-        $aventure = Film::where('type_id', '=', 7)->get();
-        $fantastique = Film::where('type_id', '=', 8)->get();
-        $romance = Film::where('type_id', '=', 9)->get();
-        $anime = Film::where('type_id', '=', 10)->get();
+        $comedies = Film::where('type_id', '=', 1)->get();
+        $criminels = Film::where('type_id', '=', 2)->get();
+        $horreurs = Film::where('type_id', '=', 3)->get();
+        $westerns = Film::where('type_id', '=', 4)->get();
+        $sciencefictions = Film::where('type_id', '=', 5)->get();
+        $actions = Film::where('type_id', '=', 6)->get();
+        $aventures = Film::where('type_id', '=', 7)->get();
+        $fantastiques = Film::where('type_id', '=', 8)->get();
+        $romances = Film::where('type_id', '=', 9)->get();
+        $animes = Film::where('type_id', '=', 10)->get();
 
-        return View('Netflix.index', compact('films', 'personnes', 'types', 'comedie', 'criminel', 'horreur', 'western', 'sciencefiction', 'action', 'aventure', 'fantastique', 'romance', 'anime', 'fillable')); 
+        return View('Netflix.index', compact('films', 'personnes', 'types', 'comedies', 'criminels', 'horreurs', 'westerns', 'sciencefictions', 'actions', 'aventures', 'fantastiques', 'romances', 'animes', 'fillable')); 
     }
 
     /**

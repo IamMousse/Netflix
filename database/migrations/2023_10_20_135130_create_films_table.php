@@ -23,7 +23,7 @@ return new class extends Migration
             $table->foreignId('realisateur_id');
             $table->foreignId('producteur_id');
             $table->foreignId('acteur_id');
-            $table->foreignId('type_id')->constrained('types');
+            $table->foreignId('type_id');
             $table->timestamps();
         });
     }

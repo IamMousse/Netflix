@@ -163,16 +163,16 @@
       </div>
       <div class="col-xl-1"></div>
     </div>
-@endrole
+    @endrole
     <div class="row">
       <div class="col-xl-1"></div>
       <div class="col-xl-10">
         <h1 id="myList">Autres</h1>
         <div class="box">
-          @if(count($documentaires))
-            @foreach($documentaires as $documentaire)
-            <a href="{{route('film.show', [$documentaire])}}">
-              <img src="{{$documentaire->pochetteURL}}" alt="" width="250px">
+          @if(count($sciencefictions))
+            @foreach($sciencefictions as $sciencefiction)
+            <a href="{{route('film.show', [$sciencefiction])}}">
+              <img src="{{$sciencefiction->pochetteURL}}" alt="" width="250px">
             </a>
             @endforeach
           @else
