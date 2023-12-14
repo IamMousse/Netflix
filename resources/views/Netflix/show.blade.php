@@ -20,6 +20,7 @@
                     <p>{{$film->resumer}}</p>
                     <h5>Durée : {{$film->duree}}</h5>
                     <h5>RottenTomato: {{$film->rating}}</h5>
+                    <h6>Type de film: {{$film->type->genre}}</h6>
                     @role('admin')
                     <div>
                         <a href="{{route('films.edit', [$film])}}" class="btn btn-danger">

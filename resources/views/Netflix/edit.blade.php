@@ -100,12 +100,12 @@
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="type_id">Type du film</label>
-                <select class="form-control" name="type_id" id="acteur_id">
+                <select class="form-control" name="type_id" id="type_id">
                     <option value="{{$type->id}}"> {{$type->genre}} </option>
                     @foreach ($types as $type)
-                        @if($type->id!=$type->id)
-                            <option value="{{old('id', $type->id)}}">{{$type->genre}}</option>
-                        @endif
+                    @if($type->id!=$type->genre)
+                        <option value="{{old('id', $type->id)}}">{{$type->genre}}</option>
+                    @endif
                     @endforeach
                 </select>
             </div>
