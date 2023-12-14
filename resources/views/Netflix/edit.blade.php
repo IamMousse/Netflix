@@ -100,6 +100,7 @@
             <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="type_id">Type du film</label>
+                <!-- doublons du type de film -->
                 <select class="form-control" name="type_id" id="type_id">
                     <option value="{{$type->id}}"> {{$type->genre}} </option>
                     @foreach ($types as $type)
