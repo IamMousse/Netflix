@@ -28,19 +28,32 @@
                 <label class="form-label" for="nom">Nom de la personne</label>
                 <input type="text" class="form-control" id="nom" placeholder="Nom de la personne" name="nom">
             </div>
+            <div class="col-xl-2">
+                <!-- Section genre SHANY ... -->
+            </div>
             <div class="col-xl-4"></div>
         </div>
         <div class="row">
             <div class="col-xl-2"></div>
-            <div class="col-xl-4">
+            <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="dateN">Date de naissance</label>
                 <input type="date" class="form-control" id="dateN" name="dateN">
             </div>
-            <div class="col-xl-4">
+            <div class="col-xl-2">
                 <br>
                 <label class="form-label" for="dateDece">Date de décès</label>
                 <input type="date" class="form-control" id="dateDece" name="dateDece">
+            </div>
+            <div class="col-xl-2">
+                <br>
+                <label class="form-label" for="sexe">Sexe de la personne</label>
+                <input type="text" class="form-control" id="sexe" placeholder="Homme" name="sexe">
+            </div>
+            <div class="col-xl-2">
+                <br>
+                <label class="form-label" for="metier">Métier de la personne</label>
+                <input type="text" class="form-control" id="metier" placeholder="realisateur" name="metier">
             </div>
             <div class="col-xl-2"></div>
         </div>

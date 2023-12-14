@@ -91,7 +91,7 @@
             </div>
             <div class="col-xl-2">
                 <br>
-                <label class="form-label" for="acteur">Type de film</label>
+                <label class="form-label" for="type_id">Type de film</label>
                 <select class="form-control" id="id" name="type_id">
                     <option value="" selected>Veuillez choisir un type de film</option>
                     @foreach($types as $type)
