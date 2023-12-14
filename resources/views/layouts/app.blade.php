@@ -30,8 +30,21 @@
       </nav>
       @role('admin')
       <nav class="sub">
-        <a href="/creation/usagers">Usagers++</a>
-        <a href="/usagers">Usagers</a>
+        <!-- <a href="/creation/usagers">Usagers++</a> <a href="/usagers">Usagers</a> -->
+        <div>
+          <form method="get" action="{{route('usagers.create')}}">
+            @csrf
+            <button type="submit" class="btn btn-warning text-dark">Usagers++</button>
+          </form> 
+        </div>
+      </nav>
+      <nav class="sub">
+        <div>
+          <form method="get" action="{{route('usagers.index')}}">
+            @csrf
+            <button type="submit" class="btn btn-success text-dark">Usagers</button>
+          </form> 
+        </div>
       </nav>
       @endrole
       <nav class="sub">
