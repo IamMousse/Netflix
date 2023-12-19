@@ -94,35 +94,44 @@ class UsagersController extends Controller
     public function edit(Usager $usager)
     {
         $roleuser = Usager::orderBy('role')->get();
-        return View('Auth.edith', compact('usager', 'roleuser'));
+        return View('Auth.edit', compact('usager', 'roleuser'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UsagerRequest $request, Usager $usager)
     {
-        log::debug('asdf');
+        log::debug('loop update debut');
         try
         {
-            log::debug('qwerty');
-            $usager->nomUsager  = $request->nomUsager;
-            $usager->nom        = $request->nom;
-            $usager->prenom     = $request->prenom;
-            //$usager->role       = $request->role;
-            $usager->password   = $request->password;
+            log::debug('debut try');
+            $usager->nom_usager = $request->nom_usager;
+            log::debug('nom_user');
+            $usager->nom = $request->nom;
+            log::debug('nom');
+            $usager->prenom = $request->prenom;
+            log::debug('prenom');
+            $usager->email = $request->email;
+            log::debug('email');
+            $usager->role = $request->role;
+            log::debug($request->role);
+            $usager->password = $request->password;
+            log::debug('password');
             
             $usager->save();
-            return redirect()->route('Auth.index')->with('message', "Modification de " . $usager->nomUsager . " réussi!");
-            log::debug('fin');
+            log::debug('END');
+            return redirect()->route('usagers.index')->with('message', "Modification de " . $usager->nom_usager . " réussi!");
         }
         catch(\Throwable $e)
-        {log::debug('ddddd');
+        {
             Log::debug($e);
-            return redirect()->route('Auth.index')->withErrors(['la modification n\'a pas fonctionné']);
+            return redirect()->route('usagers.index')->withErrors(['la modification n\'a pas fonctionné']);
         }
-        return redirect()->route('Auth.index');
+        return redirect()->route('usagers.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -132,17 +141,15 @@ class UsagersController extends Controller
         try
         {
             $usager = Usager::findOrFail($id);
-            //Si un film a des acteurs, on ne peut pas le supprimer.
-           // $personne->films()->detach();
 
             $usager->delete();
-            return redirect()->route('Auth.index')->with('message', "Suppression de " . $usager->nom . " réussi!");
+            return redirect()->route('usagers.index')->with('message', "Suppression de " . $usager->nom . " réussi!");
         }
         catch(\Throwable $e)
         {
             Log::debug($e);
-            return redirect()->route('Auth.index')->withErrors(['la suppression n\'a pas fonctionné']); 
+            return redirect()->route('usagers.index')->withErrors(['la suppression n\'a pas fonctionné']); 
         }
-            return redirect()->route('Auth.index');
+            return redirect()->route('usagers.index');
     }
 }

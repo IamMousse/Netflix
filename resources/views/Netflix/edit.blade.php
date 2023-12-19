@@ -129,6 +129,7 @@
             <div class="col-xl-2"></div>
             <div class="col-xl-4">
                 <button  type="submit" class="btn btn-success">Modifier</button>
+            </form>
             </div>
             <div class="col-xl-4">
                 <form method="POST" action="{{route('films.destroy',[$film->id])}}">
@@ -140,7 +141,7 @@
             <div class="col-xl-2"></div>
         </div>
     </div>
-</form>
+
 
 @if(isset($errors) && $errors->any())
 <div class="alert alert-danger">
