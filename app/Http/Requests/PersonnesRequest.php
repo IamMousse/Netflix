@@ -24,8 +24,10 @@ class PersonnesRequest extends FormRequest
         return [
             'nom' => 'required|max:100',
             'dateN' => 'required|date',
+            'dateDece' => 'required|date',
+            'sexe' => 'required|max:100',
+            'metier' => 'required|max:100',
             'photo' => 'max:1000',
-            //add metier dateDece sexe
         ];
     }
     public function messages()
@@ -35,6 +37,8 @@ class PersonnesRequest extends FormRequest
             'nom.max' => 'Erreur',
             'dateN.date' => 'Erreur',
             'dateDece.date' => 'Erreur',
+            'sexe.max' => 'Erreur',
+            'metier.max' => 'Erreur',
             'photo.max' => 'Erreur',
         ];
     }

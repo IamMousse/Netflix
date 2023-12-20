@@ -77,7 +77,7 @@
                 </form>
             </div>
             <div class="col-xl-4">
-                <form method="POST" action="{{route('films.destroy', [$personne->id])}}">
+                <form method="POST" action="{{route('personnes.destroy', [$personne->id])}}">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Supprimer</button>

@@ -33,9 +33,11 @@
       <div class="box">
       @if(count($films))
         @foreach($films as $film)
+        @if($film->realisateur != null)
         <a href="{{route('personne.show', [$film->realisateur])}}">
           <img src="{{$film->realisateur->photo}}" alt="" width="250px">
         </a>
+        @endif
         @endforeach
       @else
         <p>Il n'y a pas de Personne</p>
@@ -49,9 +51,11 @@
       <div class="box">
         @if(count($films))
         @foreach($films as $film)
+        @if($film->producteur != null)
         <a href="{{route('personne.show', [$film->producteur])}}">
           <img src="{{$film->producteur->photo}}" alt="" width="250px">
-        </a>
+        </a> 
+        @endif
         @endforeach
       @else
         <p>Il n'y a pas de Personne</p>
@@ -66,9 +70,11 @@
       @if(count($films))
         @foreach($films as $film)
           @foreach($film->personnes as $acteur)
+          @if($acteur != null)
             <a href="{{route('personne.show', [$acteur])}}">
               <img src="{{$acteur->photo}}" alt="" width="250px">
             </a>
+          @endif
           @endforeach
         @endforeach
       @else

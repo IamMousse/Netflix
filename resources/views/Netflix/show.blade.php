@@ -38,12 +38,15 @@
             </div>
             <div class="col-xl-6 text-center">
             <h1>Personnes</h1>
+            @if($film->realisateur != null)
                 <a href="{{route('personne.show', [$film->realisateur])}}">
                     <img src="{{$film->realisateur->photo}}" alt="" width="150px" height="150px">
                 </a>
+            @elseif($film->producteur != null)
                 <a href="{{route('personne.show', [$film->producteur])}}">
                     <img src="{{$film->producteur->photo}}" alt="" width="150px" height="150px">
                 </a>
+            @endif
                 @foreach($film->personnes as $acteur)
                 <a href="{{route('personne.show', [$acteur])}}">
                     <img src="{{$acteur->photo}}" alt="" width="150px" height="150px">

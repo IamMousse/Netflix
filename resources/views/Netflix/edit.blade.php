@@ -62,6 +62,7 @@
         <div class="row">
             <div class="col-xl-2"></div>
             <div class="col-xl-2">
+            @if($film->realisateur != null)
                 <br>
                 <label class="form-label" for="realisateur_id">Réalisateur ID</label>
                 <select class="form-control" name="realisateur_id" id="realisateur_id">
@@ -72,8 +73,10 @@
                         @endif
                     @endforeach
                 </select>
+            @endif
             </div>
             <div class="col-xl-2">
+            @if($film->producteur != null)
                 <br>
                 <label class="form-label" for="producteur_id">Producteur ID</label>
                 <select class="form-control" name="producteur_id" id="producteur_id">
@@ -84,8 +87,10 @@
                         @endif
                     @endforeach
                 </select>
+            @endif
             </div>
             <div class="col-xl-2">
+            @if($acteur != null)
                 <br>
                 <label class="form-label" for="acteur">Acteur ID</label>
                 <select class="form-control" name="acteur_id" id="acteur_id">
@@ -96,6 +101,7 @@
                         @endif
                     @endforeach
                 </select>
+                @endif
             </div>
             <div class="col-xl-2">
                 <br>

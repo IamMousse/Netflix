@@ -59,7 +59,7 @@ class PersonnesController extends Controller
      */
     public function show(Personne $personne)
     {
-        return View('Personne.show', compact('personne'));
+        return View('personne.show', compact('personne'));
     }
 
     /**
@@ -69,7 +69,7 @@ class PersonnesController extends Controller
      */
     public function edit(Personne $personne)
     {
-        return View('Personne.edit', compact('personne'));
+        return View('personne.edit', compact('personne'));
     }
 
     /**
@@ -84,7 +84,6 @@ class PersonnesController extends Controller
             $personne->dateN = $request->dateN;
             $personne->photo = $request->photo;
             $personne->dateDece = $request->dateDece;
-            log::debug($dateDece);
             $personne->sexe = $request->sexe;
             $personne->metier = $request->metier;
             log::debug('bbb');
@@ -106,9 +105,13 @@ class PersonnesController extends Controller
     {
         try
         {
+            log::debug('orange');
             $personne = Personne::findOrFail($id);
+            log::debug('anananas');
             $personne->films()->detach();
+            log::debug('pomme');
             $personne->delete();
+            log::debug('banane');
             return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
         }
         catch(\Throwable $e)

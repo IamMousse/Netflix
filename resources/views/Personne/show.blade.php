@@ -16,11 +16,24 @@
           <div class="col-xl-4">
             <img src="{{$personne->photo}}" alt="" width="500px">
           </div>
-          <div class="col-xl-4 text-center">
+          <div class="col-xl-4">
             <div class="row">
-              <h1>{{$personne->nom}}</h1>
-              <h3>{{$personne->dateN}}</h3>
-              <br><br><br>
+              <h1 class="text-center">{{$personne->nom}}</h1>
+              
+              <div class="col-xl-7 text-left">
+              <br>
+                <h4>Date naissance: {{$personne->dateN}}</h4>
+                <h4>Date de décès: {{$personne->dateDece}}</h4>
+                <br><br>
+              </div>
+              <div class="col-xl-5 text-left">
+              <br>
+                <h4>Sexe: {{$personne->sexe}}</h4>
+                <h4>Métier: {{$personne->metier}}</h4>
+                <h5>Genre_id: {{$personne->genre_id}}</h5>
+                <br><br>
+              </div>
+              
             </div>
             @role('admin')
             <div class="row">
