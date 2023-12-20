@@ -42,7 +42,7 @@
         <div>
           <form method="get" action="{{route('usagers.index')}}">
             @csrf
-            <button type="submit" class="btn btn-success text-dark">Usagers</button>
+            <button type="submit" class="btn btn-info text-dark">Usagers</button>
           </form> 
         </div>
       </nav>

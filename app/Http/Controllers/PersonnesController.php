@@ -79,12 +79,15 @@ class PersonnesController extends Controller
     {
         try
         {
+            log::debug('aaa');
             $personne->nom = $request->nom;
             $personne->dateN = $request->dateN;
             $personne->photo = $request->photo;
             $personne->dateDece = $request->dateDece;
+            log::debug($dateDece);
             $personne->sexe = $request->sexe;
             $personne->metier = $request->metier;
+            log::debug('bbb');
             $personne->save();
             return redirect()->route('personnes.index')->with('message', "Modification de " . $personne->nom . " réussi!");
         }
@@ -104,9 +107,7 @@ class PersonnesController extends Controller
         try
         {
             $personne = Personne::findOrFail($id);
-            //Si un film a des acteurs, on ne peut pas le supprimer.
             $personne->films()->detach();
-            
             $personne->delete();
             return redirect()->route('personnes.index')->with('message', "Suppression de " . $personne->nom . " réussi!");
         }

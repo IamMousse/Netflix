@@ -21,18 +21,41 @@
     @csrf 
     @method('PATCH')
     <div class="container-fluid text-center">
-    
+        <div class="row">
+            <div class="col-xl-2"></div>
+            <div class="col-xl-2">
+            <br>
+                <label class="form-label" for="nom">Nom de la personne</label>
+                <input type="text" class="form-control" id="nom" name="nom" value="{{old('nom', $personne->nom)}}">
+            </div>
+            <div class="col-xl-2">
+            <br>
+                <label class="form-label" for="sexe">Sexe de la personne</label>
+                <input type="text" class="form-control" id="sexe" name="sexe" value="{{old('sexe', $personne->sexe)}}">
+            </div>
+            <div class="col-xl-2">
+            <br>
+                <label class="form-label" for="metier">Métier de la personne</label>
+                <input type="text" class="form-control" id="metier" name="metier" value="{{old('metier', $personne->metier)}}">
+            </div>
+            <div class="col-xl-2">
+            <br>
+                <label class="form-label" for="genre_id">Genre de la personne</label>
+                <input type="text" class="form-control" id="genre_id" name="genre_id" value="{{old('genre_id', $personne->genre_id)}}">
+            </div>
+            <div class="col-xl-2"></div>
+        </div>
         <div class="row">
             <div class="col-xl-2"></div>
             <div class="col-xl-4">
                 <br>
-                <label class="form-label" for="nom">Nom de la personne</label>
-                <input type="text" class="form-control" id="nom" name="nom" value="{{old('nom', $personne->nom)}}">
+                <label class="form-label" for="dateN">Date de naissance de la personne</label>
+                <input type="date" class="form-control" id="dateN" name="dateN" value="{{old('dateN', $personne->dateN)}}">
             </div>
             <div class="col-xl-4">
                 <br>
-                <label class="form-label" for="dateN">Date de naissance de la personne</label>
-                <input type="date" class="form-control" id="dateN" name="dateN" value="{{old('dateN', $personne->dateN)}}">
+                <label class="form-label" for="dateDece">Date de décès de la personne</label>
+                <input type="date" class="form-control" id="dateDece" name="dateDece" value="{{old('dateDece', $personne->dateDece)}}">
             </div>
             <div class="col-xl-2"></div>
         </div>
@@ -51,6 +74,7 @@
             <div class="col-xl-2"></div>
             <div class="col-xl-4">
                 <button  type="submit" class="btn btn-success">Modifier</button>
+                </form>
             </div>
             <div class="col-xl-4">
                 <form method="POST" action="{{route('films.destroy', [$personne->id])}}">
@@ -62,7 +86,7 @@
             <div class="col-xl-2"></div>
         </div>
     </div>
-</form>
+
 
 @endrole
 @endsection
