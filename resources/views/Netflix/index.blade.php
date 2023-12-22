@@ -280,8 +280,8 @@
         <div class="box">
           @if(count($criminels))
             @foreach($criminels as $criminel)
-            <a href="{{route('film.show', [$criminel])}}"><img src="{{ asset('img/films/' . $criminel->pochetteURL) }}" alt="" width="300px" height="300px">
-
+            <a href="{{route('film.show', [$criminel])}}">
+              <img src="{{ asset('img/films/' . $criminel->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else

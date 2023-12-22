@@ -23,7 +23,7 @@
     <div class="container-fluid text-center">
         <div class="row">
             <div class="col-xl-2"></div>
-            <div class="col-xl-2">
+            <div class="col-xl-4">
             <br>
                 <label class="form-label" for="nom">Nom de la personne</label>
                 <input type="text" class="form-control" id="nom" name="nom" value="{{old('nom', $personne->nom)}}">
@@ -37,11 +37,6 @@
             <br>
                 <label class="form-label" for="metier">Métier de la personne</label>
                 <input type="text" class="form-control" id="metier" name="metier" value="{{old('metier', $personne->metier)}}">
-            </div>
-            <div class="col-xl-2">
-            <br>
-                <label class="form-label" for="genre_id">Genre de la personne</label>
-                <input type="text" class="form-control" id="genre_id" name="genre_id" value="{{old('genre_id', $personne->genre_id)}}">
             </div>
             <div class="col-xl-2"></div>
         </div>
@@ -66,7 +61,6 @@
                 <label class="form-label" for="photo">Photo de la personne</label>
                 <input type="text" class="form-control" id="photo" name="photo" value="{{old('photo', $personne->photo)}}">
                 <br>
-                
             </div>
             <div class="col-xl-2"></div>
         </div>

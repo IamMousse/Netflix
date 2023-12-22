@@ -12,6 +12,7 @@
             <div class="col-xl-5">
                 <br>
                 <br>
+                <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" height="500px">
                 <img src="{{$film->pochetteURL}}" alt="" width="500px">
             </div>
             <div class="col-xl-5">
@@ -40,15 +41,18 @@
             <h1>Personnes</h1>
             @if($film->realisateur != null)
                 <a href="{{route('personne.show', [$film->realisateur])}}">
+                    <img src="{{ asset('img/personnes/' . $film->realisateur->photo) }}" alt="" width="150px" height="150px">
                     <img src="{{$film->realisateur->photo}}" alt="" width="150px" height="150px">
                 </a>
             @elseif($film->producteur != null)
                 <a href="{{route('personne.show', [$film->producteur])}}">
+                    <img src="{{ asset('img/personnes/' . $film->producteur->photo) }}" alt="" width="150pxpx" height="150px">
                     <img src="{{$film->producteur->photo}}" alt="" width="150px" height="150px">
                 </a>
             @endif
                 @foreach($film->personnes as $acteur)
                 <a href="{{route('personne.show', [$acteur])}}">
+                    <img src="{{ asset('img/personnes/' . $acteur->photo) }}" alt="" width="150px" height="150px">
                     <img src="{{$acteur->photo}}" alt="" width="150px" height="150px">
                 </a>
                 @endforeach

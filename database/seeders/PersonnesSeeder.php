@@ -23,7 +23,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Femme',
                 'metier' => 'realisateur',
                 //'genre_id' => 1,
-                'photo' => 'https://resizing.flixster.com/d4gePdVPeIEQB5ulBsi7k3TpHv4=/506x652/v2/https://flxt.tmsimg.com/v9/AllPhotos/150673/150673_v9_ba.jpg',
+                'photo' => 'lana_wachowski.jpg',
             ],
             [ /* Producteur */
                 'id' => 2,
@@ -33,7 +33,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th/id/R.b6073cb386008553b7cd2678135dc209?rik=opy2YMkDTKopRA&pid=ImgRaw&r=0',
+                'photo' => 'joel_silver.jfif',
             ],
             [ /* Acteur */
                 'id' => 3,
@@ -43,7 +43,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th/id/R.6d9329ffad20f19db341208725fb1b39?rik=LG%2bgUZMtkERySw&riu=http%3a%2f%2fnetworthcelebrities.com%2fwp-content%2fuploads%2f2016%2f01%2fKeanu-Reeves_6.jpg&ehk=Hdnyx%2bPSGEKdczDtLCaDemqch%2bqYkipQZvAIjcdLMHo%3d&risl=&pid=ImgRaw&r=0',
+                'photo' => 'keanu_reeves.jfif',
             ],
 
             /* A Classic Horror Story */
@@ -55,7 +55,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 2,
-                'photo' => 'https://i1.wp.com/www.badtaste.it/wp/wp-content/uploads/2019/05/roberto-de-feo.jpg?fit=600%2C300&quality=85&strip=all&ssl=1',
+                'photo' => 'roberto_de_feo.webp',
             ],
             [ /* Producteur */
                 'id' => 5,
@@ -65,7 +65,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 2,
-                'photo' => 'https://img.networthpost.org/thumbs/869431_maurizio-totti/869431_maurizio-totti_1.jpeg',
+                'photo' => 'maurizio-totti_.jpeg',
             ],
             [ /* Acteur */
                 'id' => 6,

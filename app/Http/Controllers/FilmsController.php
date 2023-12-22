@@ -54,18 +54,24 @@ class FilmsController extends Controller
     public function store(Request $request)
     {
         try{
+            log::debug('AAAAAA');
             $films = new Film($request->all());
             $uploadedFile= $request->file('pochetteURL');
             $films->type_id = $request->input('type_id');
             $nomFichierUnique = str_replace(' ', '_', $films->titre) . '-' . uniqid() . '.' . $uploadedFile->extension();
+            
+            log::debug('BBBBBB');
             try
             {
+                log::debug('CCCCCC');
                 $request->pochetteURL->move(public_path('img/films'), $nomFichierUnique);
             }
             catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) 
             {
+                log::debug('DDDDDDD');
                 Log::error("Erreur lors du téléversement du fichier. ", [$e]);
             }
+            log::debug('EEEEEE');
             $films->pochetteURL = $nomFichierUnique;
             $films->save();
             return redirect()->route('films.index')->with('message', "Ajout du film " . $films->titre . " réussi!");

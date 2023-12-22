@@ -14,6 +14,7 @@
       <div class="row">
         <div class="col-xl-2"></div>
           <div class="col-xl-4">
+            <img src="{{ asset('img/personnes/' . $personne->photo) }}" alt="" height="500px">
             <img src="{{$personne->photo}}" alt="" width="500px">
           </div>
           <div class="col-xl-4">
@@ -30,7 +31,6 @@
               <br>
                 <h4>Sexe: {{$personne->sexe}}</h4>
                 <h4>Métier: {{$personne->metier}}</h4>
-                <h5>Genre_id: {{$personne->genre_id}}</h5>
                 <br><br>
               </div>
               
@@ -46,6 +46,7 @@
               @foreach ($personne->filmsRealises as $film)
                 <h1>Films réalisés</h1>
                 <a href="{{route('film.show', [$film])}}">
+                  <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
                   <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach
@@ -53,6 +54,7 @@
                 @foreach($personne->filmsProduits as $film)
                 <h1>Films produits</h1>
                 <a href="{{route('film.show', [$film])}}">
+                  <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
                   <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach
@@ -60,6 +62,7 @@
                 @foreach($personne->filmsActeurs as $film)
                 <h1>Films jouer</h1>
                 <a href="{{route('film.show', [$film])}}">
+                  <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
                   <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach

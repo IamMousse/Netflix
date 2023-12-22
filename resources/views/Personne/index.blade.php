@@ -88,15 +88,11 @@
     <div class="location" id="acteur">
       <h1 id="acteur">Image</h1>
       <div class="box">
-      @if(count($films))
-        @foreach($films as $film)
-          @foreach($film->personnes as $acteur)
-          @if($acteur != null)
-          <a href="{{route('personne.show', [$acteur])}}"><img src="{{ asset('img/personnes/' . $personne->photo) }}" alt="" width="300px" height="300px">
-
-</a>
-          @endif
-          @endforeach
+      @if(count($personnes))
+        @foreach($personnes as $personne)
+        <a href="{{route('personne.show', [$personne])}}">
+          <img src="{{ asset('img/personnes/' . $personne->photo) }}" alt="" width="300px" height="300px">
+        </a>
         @endforeach
       @else
         <p>Il n'y a pas de Personne</p>
