@@ -107,6 +107,15 @@
 
 
 @role('admin', 'normal')
+
+@if(isset($errors) && $errors->any())
+<div class="alert alert-danger">
+  @foreach($errors->all() as $error)
+  <p>{{ $error }}</p>
+  @endforeach
+</div>
+@endif
+
 <div class="wrapper">
   <div class="container-fluid">
     <div class="row">
@@ -117,7 +126,7 @@
             @if(count($actions))
               @foreach($actions as $action)
               <a href="{{route('film.show', [$action])}}">
-                <img src="{{$action->pochetteURL}}" alt="" width="250px">
+                <img src="{{ asset('img/films/' . $action->pochetteURL) }}" alt="" width="300px" height="300px">
               </a>
               @endforeach
             @else
@@ -135,7 +144,7 @@
             @if(count($horreurs))
               @foreach($horreurs as $horreur)
               <a href="{{route('film.show', [$horreur])}}">
-                <img src="{{$horreur->pochetteURL}}" alt="" width="250px">
+                <img src="{{ asset('img/films/' . $horreur->pochetteURL) }}" alt="" width="300px" height="300px">
               </a>
               @endforeach
             @else
@@ -153,7 +162,7 @@
             @if(count($films))
               @foreach($films as $film)
               <a href="{{route('film.show', [$film])}}">
-                <img class="img-fluid" src="{{$film->pochetteURL}}" alt="" width="250px">
+                <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
               </a>
               @endforeach
             @else
@@ -172,7 +181,7 @@
             @if(count($animes))
             @foreach($animes as $anime)
             <a href="{{route('film.show', [$anime])}}">
-              <img src="{{$anime->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $anime->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -190,7 +199,7 @@
             @if(count($sciencefictions))
             @foreach($sciencefictions as $sciencefiction)
             <a href="{{route('film.show', [$sciencefiction])}}">
-              <img src="{{$sciencefiction->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $sciencefiction->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -208,7 +217,7 @@
           @if(count($comedies))
             @foreach($comedies as $comedie)
             <a href="{{route('film.show', [$comedie])}}">
-              <img src="{{$comedie->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $comedie->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -226,7 +235,7 @@
           @if(count($aventures))
             @foreach($aventures as $aventure)
             <a href="{{route('film.show', [$aventure])}}">
-              <img src="{{$aventure->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $aventure->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -244,7 +253,7 @@
           @if(count($romances))
             @foreach($romances as $romance)
             <a href="{{route('film.show', [$romance])}}">
-              <img src="{{$romance->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $romance->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -262,7 +271,7 @@
           @if(count($criminels))
             @foreach($criminels as $criminel)
             <a href="{{route('film.show', [$criminel])}}">
-              <img src="{{$criminel->pochetteURL}}" alt="" width="250px">
+              <img src="{{ asset('img/films/' . $criminel->pochetteURL) }}" alt="" width="300px" height="300px">
             </a>
             @endforeach
           @else
@@ -310,6 +319,4 @@
   </div>
 </div>
 @endauth
-
-
 @endsection

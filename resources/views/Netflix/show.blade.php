@@ -42,18 +42,15 @@
             @if($film->realisateur != null)
                 <a href="{{route('personne.show', [$film->realisateur])}}">
                     <img src="{{ asset('img/personnes/' . $film->realisateur->photo) }}" alt="" width="150px" height="150px">
-                    <img src="{{$film->realisateur->photo}}" alt="" width="150px" height="150px">
                 </a>
             @elseif($film->producteur != null)
                 <a href="{{route('personne.show', [$film->producteur])}}">
                     <img src="{{ asset('img/personnes/' . $film->producteur->photo) }}" alt="" width="150pxpx" height="150px">
-                    <img src="{{$film->producteur->photo}}" alt="" width="150px" height="150px">
                 </a>
             @endif
                 @foreach($film->personnes as $acteur)
                 <a href="{{route('personne.show', [$acteur])}}">
                     <img src="{{ asset('img/personnes/' . $acteur->photo) }}" alt="" width="150px" height="150px">
-                    <img src="{{$acteur->photo}}" alt="" width="150px" height="150px">
                 </a>
                 @endforeach
             </div>

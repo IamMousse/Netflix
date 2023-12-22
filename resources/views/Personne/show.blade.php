@@ -47,7 +47,6 @@
                 <h1>Films réalisés</h1>
                 <a href="{{route('film.show', [$film])}}">
                   <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
-                  <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach
 
@@ -55,7 +54,6 @@
                 <h1>Films produits</h1>
                 <a href="{{route('film.show', [$film])}}">
                   <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
-                  <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach
 
@@ -63,7 +61,6 @@
                 <h1>Films jouer</h1>
                 <a href="{{route('film.show', [$film])}}">
                   <img src="{{ asset('img/films/' . $film->pochetteURL) }}" alt="" width="300px" height="300px">
-                  <img src="{{$film->pochetteURL}}" alt="" width="300px" height="300px">
                 </a>
                 @endforeach
             </div>

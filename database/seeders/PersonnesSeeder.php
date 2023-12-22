@@ -75,7 +75,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Femme',
                 'metier' => 'acteur',
                 //'genre_id' => 2,
-                'photo' => 'https://fr.web.img6.acsta.net/c_310_420/pictures/19/07/02/14/35/4286615.jpg',
+                'photo' => 'matilda_lutz.jpg',
             ],
 
             /* Rocky 1 */
@@ -87,7 +87,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 1,
-                'photo' => 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https:%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2017%2F06%2Fgettyimages-633942480-2000.jpg',
+                'photo' => 'john_g_avilsen.jpg',
             ],
             [ /* Producteur */
                 'id' => 8,
@@ -97,7 +97,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th/id/R.96f2d20d01680ee826801ab1b4b27466?rik=G4ifjsnZusVAtw&pid=ImgRaw&r=0',
+                'photo' => 'robert_chartoff.jfif',
             ],
             [ /* Acteur */
                 'id' => 9,
@@ -107,7 +107,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 1,
-                'photo' => 'https://mx.web.img2.acsta.net/pictures/19/05/24/14/51/3035180.jpg',
+                'photo' => 'sylvester_stallone.webp',
             ],
             
             /* ROMAN FRAYSSINET, SPECTACLE 'ALORS' */
@@ -119,7 +119,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 3,
-                'photo' => 'https://image.tmdb.org/t/p/w276_and_h350_face/35KZdQONjN0dx4noBhn9LX3sKdG.jpg',
+                'photo' => 'roman_frayssinet.jpg',
             ],
             [ /* Producteur */
                 'id' => 11,
@@ -129,7 +129,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 3,
-                'photo' => 'https://image.tmdb.org/t/p/w276_and_h350_face/35KZdQONjN0dx4noBhn9LX3sKdG.jpg',
+                'photo' => 'roman_frayssinet.jpg',
             ],
             [ /* Acteur */
                 'id' => 12,
@@ -139,7 +139,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 3,
-                'photo' => 'https://image.tmdb.org/t/p/w276_and_h350_face/35KZdQONjN0dx4noBhn9LX3sKdG.jpg',
+                'photo' => 'roman_frayssinet.jpg',
             ],
 
             /* Prey */
@@ -151,7 +151,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 3,
-                'photo' => 'https://th.bing.com/th/id/R.39399938ceb586b99ba4ee86c4021024?rik=DL6TY%2b1P9iRYXQ&pid=ImgRaw&r=0',
+                'photo' => 'dan_trachtenberg.jfif',
             ],
             [ /* Producteur */
                 'id' => 14,
@@ -161,7 +161,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 3,
-                'photo' => 'https://alchetron.com/cdn/john-davis-producer-43d45684-a15e-49f5-b549-6912d8d3bad-resize-750.jpg',
+                'photo' => 'john_davis.jpg',
             ],
             [ /* Acteur */
                 'id' => 15,
@@ -171,7 +171,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Femme',
                 'metier' => 'acteur',
                 //'genre_id' => 3,
-                'photo' => 'https://superstarsbio.com/wp-content/uploads/2018/11/4-Amber-Midthunder.jpg',
+                'photo' => 'amber_midthunder.jpg',
             ],
 
             /* Sherlock Holmes (2010) */
@@ -183,7 +183,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/R.9cefb1f08619a3520f54dec12cebf655?rik=RyreY0DPoDV2tg&riu=http%3a%2f%2ffr.web.img2.acsta.net%2fpictures%2f19%2f05%2f16%2f15%2f35%2f4731724.jpg&ehk=3UKaOKaBSqSw6SQi2LpOQALpYuKKdGviVkEvWY5haOk%3d&risl=&pid=ImgRaw&r=0',
+                'photo' => 'guy_ritchie.jfif',
             ],
             [ /* Producteur */
                 'id' => 17,
@@ -193,7 +193,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/R.47eaa9d63807c99bd93e14bb85c6efe3?rik=Z1o4YafLAHx6Tw&riu=http%3a%2f%2fwww.kino.de%2fwp-content%2fgallery%2fj%2fo%2fjoel-silver%2fsilver-joel-filmpremiere-ninja-assassin-8-rcm0x1920u.jpg&ehk=e%2b%2bYAwg%2fMd%2fDZzwG5So7q5xv1t4QApbymgf8xRd53No%3d&risl=&pid=ImgRaw&r=0',
+                'photo' => 'joel_silver.jfif',
             ],
             [ /* Acteur */
                 'id' => 18,
@@ -203,7 +203,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/R.a974526b0d8e713d6d10c6dbc35a5c91?rik=PxQRbin%2fOhnx2Q&riu=http%3a%2f%2fbr.web.img2.acsta.net%2fpictures%2f18%2f06%2f29%2f00%2f35%2f0101925.jpg&ehk=CSN0w13UxlvwbfQVwIRgLcU1NDeetirwL0F0KpsbOI0%3d&risl=&pid=ImgRaw&r=0',
+                'photo' => 'robert_downey_jr.jfif',
             ],
 
             /* Mon voisin totoro */
@@ -215,7 +215,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Femme',
                 'metier' => 'realisateur',
                 //'genre_id' => 3,
-                'photo' => 'https://th.bing.com/th/id/R.1922b816dcabd269897a54c6964d37b1?rik=FFjD4vnU%2fDk39Q&riu=http%3a%2f%2fcbsnews1.cbsistatic.com%2fhub%2fi%2f2016%2f11%2f15%2f538ee135-4354-45d4-8701-b66e5df9ebce%2fgettyimages-458663438-copy.jpg&ehk=F%2bi6Dd0BkOY7b7EG1D3HGfy%2bYZb5%2fBK%2fMoc9Gy8RfSM%3d&risl=&pid=ImgRaw&r=0',
+                'photo' => 'hayao_miyazaki.jfif',
             ],
             [ /* Producteur */
                 'id' => 20,
@@ -225,7 +225,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 3,
-                'photo' => 'https://static.wikia.nocookie.net/studio-ghibli/images/e/e7/Toru_Hara.jpg/revision/latest?cb=20210402235706',
+                'photo' => 'toru_hara.webp',
             ],
             [ /* Acteur */
                 'id' => 21,
@@ -235,7 +235,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Femme',
                 'metier' => 'acteur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th/id/OIP.BwcSPfuEHxivU8VeeVbHgQHaLH?pid=ImgDet&rs=1',
+                'photo' => 'noriko_hidaka.jfif',
             ],
 
             /* Milli Vanilli */
@@ -247,7 +247,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th?id=OSK.144d7b28c9f8feef086af6d9cf353ef8&w=472&h=472&c=12&rs=2&o=6&pid=SANGAM',
+                'photo' => 'luke_korem.jfif',
             ],
             [ /* Producteur */
                 'id' => 23,
@@ -257,7 +257,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 1,
-                'photo' => 'https://th.bing.com/th?id=OSK.144d7b28c9f8feef086af6d9cf353ef8&w=472&h=472&c=12&rs=2&o=6&pid=SANGAM',
+                'photo' => 'luke_korem.jfif',
             ],
             [ /* Acteur */
                 'id' => 24,
@@ -267,7 +267,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th?id=OSK.144d7b28c9f8feef086af6d9cf353ef8&w=472&h=472&c=12&rs=2&o=6&pid=SANGAM',
+                'photo' => 'luke_korem.jfif',
             ],
 
             /* Narnia */
@@ -279,7 +279,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/R.ab4f89b14769f709ef7fff79ca6b9ca9?rik=3ntSbq2g0lK1Hw&pid=ImgRaw&r=0',
+                'photo' => 'andrew_adamson.jfif',
             ],
             [ /* Producteur */
                 'id' => 26,
@@ -289,7 +289,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/OIP.Iq_-knt54AGUDM8jdyznAQAAAA?pid=ImgDet&rs=1',
+                'photo' => 'mark_johnson.jfif',
             ],
             [ /* Acteur */
                 'id' => 27,
@@ -299,7 +299,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 2,
-                'photo' => 'https://th.bing.com/th/id/OIP._n644eu144rJ5qBcZNE80QC1Es?pid=ImgDet&rs=1',
+                'photo' => 'tilda_swinton.jfif',
             ],
 
             /* Jumanji: Welcome to the jungle */
@@ -311,7 +311,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'realisateur',
                 //'genre_id' => 3,
-                'photo' => 'https://th.bing.com/th/id/OIP.dbdaBxXU__BLfpjvH4XjNQHaKR?pid=ImgDet&rs=1',
+                'photo' => 'jake_kasdan.jfif',
             ],
             [ /* Producteur */
                 'id' => 29,
@@ -321,7 +321,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'producteur',
                 //'genre_id' => 3,
-                'photo' => 'https://cdn.howold.co/uploads/photo/600x600/110/matt-tolmach.jpg',
+                'photo' => 'matt-tolmach.jpg',
             ],
             [ /* Acteur */
                 'id' => 30,
@@ -331,7 +331,7 @@ class PersonnesSeeder extends Seeder
                 'sexe' => 'Homme',
                 'metier' => 'acteur',
                 //'genre_id' => 1,
-                'photo' => 'https://fr.web.img6.acsta.net/c_310_420/pictures/14/07/24/17/14/366516.jpg',
+                'photo' => 'dwayne_johnson.webp',
             ],
 
         ]);    
