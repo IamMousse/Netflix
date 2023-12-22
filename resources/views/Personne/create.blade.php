@@ -11,7 +11,7 @@
 <!-- À modifier -->
 <br><br>
 @role('admin')
-<form method="post" action="{{route('personnes.store')}}" enctype="multipart/form-data">
+<form method="post" action="{{ route('personnes.store') }}" enctype="multipart/form-data">
     @csrf 
     <div class="container-fluid text-center">
     <div class="row">
@@ -22,16 +22,13 @@
             <div class="col-xl-2"></div>
         </div>
         <div class="row">
-            <div class="col-xl-4"></div>
-            <div class="col-xl-4">
+            <div class="col-xl-2"></div>
+            <div class="col-xl-8">
                 <br>
                 <label class="form-label" for="nom">Nom de la personne</label>
                 <input type="text" class="form-control" id="nom" placeholder="Nom de la personne" name="nom">
             </div>
-            <div class="col-xl-2">
-                <!-- Section genre SHANY ... -->
-            </div>
-            <div class="col-xl-4"></div>
+            <div class="col-xl-2"></div>
         </div>
         <div class="row">
             <div class="col-xl-2"></div>

@@ -47,22 +47,24 @@ class PersonnesController extends Controller
     public function store(PersonnesRequest $request)
     {
         try{
+            log::debug('AAAAAA');
             $personnes = new Personne($request->all());
             $uploadedFile= $request->file('photo');
            // $films->type_id = $request->input('type_id');
             $nomFichierUnique = str_replace(' ', '_', $personnes->nom) . '-' . uniqid() . '.' . $uploadedFile->extension();
             try
             {
+                log::debug('BBBBB');
                 $request->photo->move(public_path('img/personnes'), $nomFichierUnique);
             }
-            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) 
+            {
+                log::debug('CCCCCC');
                 Log::error("Erreur lors du téléversement du fichier. ", [$e]);
-                }
-                $personnes->photo = $nomFichierUnique;
-
-        
-            //$personne = new Personne($request->all());
-            $personne->save();
+            }
+            $personnes->photo = $nomFichierUnique;
+            $personnes->save();
+            log::debug('DDDDD');
             return redirect()->route('personnes.index')->with('message', "Ajout du Personne " . $personnes->nom . " réussi!");
             }
         catch (\Throwable $e)

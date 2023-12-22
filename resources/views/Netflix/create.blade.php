@@ -40,12 +40,7 @@
                 <label class="form-label" for="rating">Rating du film</label>
                 <input type="text" class="form-control" id="rating" placeholder="Résumer du film" name="rating">
             </div>
-            <div class="col-xl-2">
-                <br>
-                <label class="form-label" for="genre">Catégories du film</label>
-                <input type="text" class="form-control" id="genre" placeholder="Comedie, Horreur, etc" name="genre">
-            </div>
-            <div class="col-xl-2">
+            <div class="col-xl-4">
                 <br>
                 <label class="form-label" for="duree">Durée du film en minute</label>
                 <input type="number" class="form-control" id="duree" placeholder="60" name="duree">

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('sexe','25');
             $table->string('metier','100');
             $table->string('photo', '1000');
-            $table->foreignId('genre_id');
+            //$table->foreignId('genre_id');
             $table->timestamps();
         });
     }
