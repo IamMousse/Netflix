@@ -8,6 +8,7 @@ use App\Models\Personne;
 use App\Models\Type;
 use App\Http\Requests\FilmRequest;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class FilmsController extends Controller
 {
@@ -52,6 +53,7 @@ class FilmsController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         try
         {
             $film = new Film($request->all());
@@ -60,6 +62,31 @@ class FilmsController extends Controller
         catch (\Throwable $e)
         {
             Log::debug($e);
+        }
+        return redirect()->route('films.index');
+        */
+        try{
+            $films = new Film($request->all());
+            $uploadedFile= $request->file('pochetteURL');
+            $films->type_id = $request->input('type_id');
+            $nomFichierUnique = str_replace(' ', '_', $films->titre) . '-' . uniqid() . '.' . $uploadedFile->extension();
+            try
+            {
+                $request->pochetteURL->move(public_path('img/films'), $nomFichierUnique);
+            }
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+                Log::error("Erreur lors du téléversement du fichier. ", [$e]);
+                }
+                $films->pochetteURL = $nomFichierUnique;
+            $films->save();
+            return redirect()->route('films.index')->with('message', "Ajout du film " . $films->titre . " réussi!");
+
+        }
+        catch (\Throwable $e)
+        {
+            //gere l'erreur
+            Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['l\'ajout n\'a pas fonctionné']);
         }
         return redirect()->route('films.index');
     }
@@ -174,6 +201,43 @@ class FilmsController extends Controller
         {
             Log::debug($e);
             return redirect()->route('films.index')->withErrors(['La suppression n\'a pas fonctionné']);
+        }
+        return redirect()->route('films.index');
+    }
+
+    public function destroy_film_personne (Request $request, string $id)
+    {
+        try
+        {
+            $personnes = Personne::find($request->personne_id);
+            $films = Film::find($request->film_id);
+
+            //Vérifier si la relation existe déjà
+            if($personnes->films->contains($films))
+            {
+               // $films = Film::findOrFail($id);
+                //$films->personnes()->detach();
+
+               // DB::table('film_personne')->where('personne_id',$request->personne_id)->where('film_id',$request->film_id)->delete();
+                dd($request->personne_id);
+                //$personnes = Personne::findOrFail($id);
+                //$personnes->films()->detach();
+
+                //$personnes->films()->detach($films);
+                //$films->personnes()->detach($personnes);
+                //$personnes->delete();
+            }
+            else
+            {
+                Log::debug("La relation n existe pas");
+
+            }
+            return redirect()->route('films.index');
+        }
+        catch (\Throwable $e)
+        {
+            Log::debug($e);
+            return redirect()->route('films.index');
         }
         return redirect()->route('films.index');
     }

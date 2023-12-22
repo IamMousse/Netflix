@@ -23,7 +23,12 @@ class UsagerRequest extends FormRequest
     {
         return 
         [
-            'nom' => 'min:3',
+            
+            'nom_usager' => 'required|min:3',
+            'nom' => 'required|min:3',
+            'prenom' => 'required|min:3',
+            'email' => 'required|min:5',
+            'password' => 'required|min:3',
         ];
     }
 
@@ -31,7 +36,17 @@ class UsagerRequest extends FormRequest
     {
         return
         [
-            'nom.min' => 'Erreur',
+            
+            'nom_usager.required' => 'Erreur nom_usager',
+            'nom.required' => 'Erreur nom ',
+            'prenom.required' => 'Erreur prenom',
+            'email.required' => 'Erreur email',
+            'password.required' => 'Erreur password',
+            'nom_usager.min' => 'Erreur nom_usager minimum 3 caractère',
+            'nom.min' => 'Erreur nom minimum 3 caractère',
+            'prenom.min' => 'Erreur prenom minimum 3 caractère',
+            'email.min' => 'Erreur email minimum 5 caractère',
+            'password.min' => 'Erreur password minimum 3 caractère',
         ];
     }
 }

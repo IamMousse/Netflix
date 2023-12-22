@@ -39,7 +39,7 @@ class UsagersController extends Controller
     public function login(Request $request)
     {
         $reussi = Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-        Log::debug(''.$reussi);
+        //Log::debug(''.$reussi);
         if($reussi){
             return redirect()->route('films.index')->with('message', "Connexion réussi");
         }
@@ -61,6 +61,7 @@ class UsagersController extends Controller
      */
     public function create()
     {
+        
         $roleuser = Usager::orderBy('role')->get();
         return View('Auth.create', compact('roleuser'));
     }
@@ -76,6 +77,7 @@ class UsagersController extends Controller
         }
         catch(\Throwable $e) {
             Log::debug($e);
+            return redirect()->route('films.index')->withErrors(['ajout n\'a pas fonctionné']);
         }
         return redirect()->route('films.index');
     }

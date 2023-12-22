@@ -11,7 +11,7 @@
 <!-- À modifier -->
 <br><br>
 @role('admin')
-<form method="post" action="{{route('personnes.store')}}">
+<form method="post" action="{{route('personnes.store')}}" enctype="multipart/form-data">
     @csrf 
     <div class="container-fluid text-center">
     <div class="row">
@@ -62,7 +62,7 @@
             <div class="col-xl-8">
                 <br>
                 <label class="form-label" for="photo">Photo de la personne</label>
-                <input type="text" class="form-control" id="photo" placeholder="lien de l'image" name="photo">
+                <input type="file" class="form-control" id="photo" placeholder="lien de l'image" name="photo">
                 <br>
                 <button  type="submit" class="btn btn-success">Enregistrer</button>
             </div>

@@ -272,6 +272,28 @@
       </div>
       <div class="col-xl-1"></div>
     </div>
+
+    <div class="row">
+      <div class="col-xl-1"></div>
+      <div class="col-xl-10">
+        <h1 id="myList">Image</h1>
+        <div class="box">
+          @if(count($criminels))
+            @foreach($criminels as $criminel)
+            <a href="{{route('film.show', [$criminel])}}"><img src="{{ asset('img/films/' . $criminel->pochetteURL) }}" alt="" width="300px" height="300px">
+
+            </a>
+            @endforeach
+          @else
+            <h3>Il n'y a pas de films</h3>
+          @endif
+        </div>   
+      </div>
+      <div class="col-xl-1"></div>
+    </div>
+
+
+
   </div>
 </div>
 

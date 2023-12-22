@@ -28,7 +28,7 @@ class FilmRequest extends FormRequest
             'rating' => 'required|integer',
             'resumer' => 'required|min:5',
             'trailer' => 'required|min:5',
-            'pochetteURL' => 'required|min:5',
+            'pochetteURL' =>'required|image|mimes:png,jpeg,jpg,gif|max:4096',
         ];
     }
 
@@ -36,20 +36,21 @@ class FilmRequest extends FormRequest
     {
         return
         [
-            'titre.required' => 'Erreur',
-            'titre.min' => 'Erreur',
-            'duree.required' => 'Erreur',
-            'duree.min' => 'Erreur',
-            'annee.required' => 'Erreur',
-            'annee.integer' => 'Erreur',
-            'rating.required' => 'Erreur',
-            'rating.integer' => 'Erreur',
-            'resumer.required' => 'Erreur',
-            'resumer.min' => 'Erreur',
-            'trailer.required' => 'Erreur',
-            'trailer.min' => 'Erreur',
-            'pochetteURL.required' => 'Erreur',
-            'pochetteURL.min' => 'Erreur',
+            'titre.required' => 'Erreur Il faut mettre un titre',
+            'titre.min' => 'Erreur Il faut mettre un titre de minmum 3 caratere',
+            'duree.required' => 'Erreur Il faut une duree',
+            'duree.min' => 'Erreur Il faut une duree en nombre',
+            'annee.required' => 'Erreur Il faut une année',
+            'annee.integer' => 'Erreur Il faut une année en nombre',
+            'rating.required' => 'Erreur rating obligatoire',
+            'rating.integer' => 'Erreur rating en nombre',
+            'resumer.required' => 'Erreur résumer obligatoire',
+            'resumer.min' => 'Erreur minimum 5 caractères pour le résumer',
+            'trailer.required' => 'Erreur trailer obligatoire',
+            'trailer.min' => 'Erreur minimum 5 caractères pour le trailer',
+            'pochetteURL.mimes' => 'Le type de fichier n\'est pas reconnu (png, jpg, gif).',
+            'pochetteURL.max' => 'La taille de l\'image ne peut pas dépasser 4096Kb.',
+            
         ];
     }
 }

@@ -18,6 +18,11 @@ class PersonnesController extends Controller
         $personnes = Personne::all();
         $films = Film::all();
         $fillable = Personne::all();
+        /*
+        $realisateur = Personne::where('genre_id', '=', 1)-get();
+        $producteur = Personne::where('genre_id', '=', 2)-get();
+        $acteur = Personne::where('genre_id', '=', 3)-get();
+        */
         $shany = Personne::where('id', '=', 1)->get();
         $animation = Personne::where('id', '=', 2)->get();
         $animal = Personne::where('id', '=', 3)->get();
@@ -41,14 +46,30 @@ class PersonnesController extends Controller
      */
     public function store(PersonnesRequest $request)
     {
-        try
-        {
-            $personne = new Personne($request->all());
+        try{
+            $personnes = new Personne($request->all());
+            $uploadedFile= $request->file('photo');
+           // $films->type_id = $request->input('type_id');
+            $nomFichierUnique = str_replace(' ', '_', $personnes->nom) . '-' . uniqid() . '.' . $uploadedFile->extension();
+            try
+            {
+                $request->photo->move(public_path('img/personnes'), $nomFichierUnique);
+            }
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+                Log::error("Erreur lors du téléversement du fichier. ", [$e]);
+                }
+                $personnes->photo = $nomFichierUnique;
+
+        
+            //$personne = new Personne($request->all());
             $personne->save();
-        }
+            return redirect()->route('personnes.index')->with('message', "Ajout du Personne " . $personnes->nom . " réussi!");
+            }
         catch (\Throwable $e)
         {
             Log::debug($e);
+            return redirect()->route('personnes.index')->withErrors(['l\'ajout n\'a pas fonctionné']);
+
         }
         return redirect()->route('personnes.index');
     }
@@ -88,6 +109,7 @@ class PersonnesController extends Controller
             $personne->metier = $request->metier;
             log::debug('bbb');
             $personne->save();
+            //$personne->titre
             return redirect()->route('personnes.index')->with('message', "Modification de " . $personne->nom . " réussi!");
         }
         catch(\Throwable $e)

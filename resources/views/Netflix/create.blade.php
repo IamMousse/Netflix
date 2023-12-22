@@ -9,7 +9,7 @@
 @endrole
 
 @role('admin')
-<form method="post" action="{{route('films.store')}}">
+<form method="post" action="{{route('films.store')}}" enctype="multipart/form-data">
     @csrf 
     <div class="container-fluid text-center">
     <div class="row">
@@ -109,7 +109,7 @@
                 <input type="text" class="form-control" id="resumer" placeholder="Résumer du film" name="resumer">
                 <br>
                 <label class="form-label" for="pochetteURL">Pochette URL du film</label>
-                <input type="text" class="form-control" id="pochetteURL" placeholder="lien de l'image" name="pochetteURL">
+                <input type="file" class="form-control" id="pochetteURL" placeholder="lien de l'image" name="pochetteURL">
                 <br>
                 <button  type="submit" class="btn btn-success">Enregistrer</button>
             </div>

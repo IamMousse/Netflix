@@ -72,6 +72,8 @@ Route::get('/lien',
 Route::post('/filmPersonne',
 [FilmsController::class, 'store_film_personne'])->name('films.store_film_personne')->middleware('auth');
 
+Route::delete('/filmPersonneDestroy',
+[FilmsController::class, 'destroy_film_personne'])->name('films.destroy_film_personne')->middleware('auth');
 
 /* Section usager */
 Route::get('/login', 

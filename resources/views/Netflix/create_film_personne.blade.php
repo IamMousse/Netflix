@@ -59,5 +59,10 @@
         </div>
         
 </form>
+        <form method="POST" action="{{route('films.destroy_film_personne') }}">
+            @csrf
+            @method('DELETE')
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
 @endrole
 @endsection
